@@ -103,52 +103,7 @@ Plus lots more... whew!
 
 ## Getting Started
 
-At the moment, the project is mostly a prototype and 'weekend hack'. But it builds and runs if you wanted to poke around or follow along.
-
-### 1. Clone, install and build
-
-```sh
-# git clone this repo
-git clone https://github.com/Byline-CMS/bylinecms.org
-cd bylinecms.org
-# install deps and build (you must build at least once before you can start the dev server)
-pnpm install
-pnpm build
-```
-
-### 2 Setup your database. 
-
-The prototype currently requires PostgreSQL. There is a docker-compose.yml in the root postgres directory. 
-
-2.1. Create the 'data' subdirectory first, and then start postgres.
-
-```sh 
-# From the root of the project
-cd postgres
-mkdir data
-./postgres.sh
-```
-
-2.2. Initialize the database and schema.
-```sh
-# Copy .env.example to .env in the apps/admin directory. Read the notes in .env.example.
-cd apps/admin
-cp .env.example .env
-cd ../../
-# The default database password is 'test' (assuming you're using our docker-compose.yml file). From the root again...
-cd apps/admin/database && ./db_init
-cd ../&& pnpm drizzle:migrate
-```
-
-### 3. Start dev mode
-
-Switch back to the root of the project and start the dev environment.
-
-```sh
-pnpm dev
-```
-
-If you've built the project (above) and have postgres up and running, you should be able to view the prototype on http://localhost:5173/
+Visit https://github.com/Byline-CMS/bylinecms.app for instructions on getting started.
 
 Enjoy and stay tuned!
 
