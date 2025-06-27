@@ -1,0 +1,15 @@
+.popover-content[data-state="open"][data-side="top"] {
+  animation: slideDownAndFade 100ms ease-in;
+}
+
+.popover-content[data-state="open"][data-side="right"] {
+  animation: slideLeftAndFade 100ms ease-in;
+}
+
+.popover-content[data-state="open"][data-side="bottom"] {
+  animation: slideUpAndFade 100ms ease-in;
+}
+
+.popover-content[data-state="open"][data-side="left"] {
+  animation: slideRightAndFade 100ms ease-in;
+}

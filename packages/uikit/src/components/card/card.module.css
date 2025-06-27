@@ -1,0 +1,67 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+@layer infonomic-components {
+  .card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    width: 100%;
+    max-width: 100%;
+    color: var(--foreground);
+    background: var(--canvas-25);
+    border-width: var(--border-width-thin);
+    border-color: var(--border-color);
+    border-style: var(--border-style-solid);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm)
+  }
+
+  .card:is(:global(.dark) *) {
+    background: var(--canvas-800);
+  }
+
+  .cardHover {
+    transition: background 0.2s ease-in-out;
+  }
+
+  .cardHover:hover {
+    background: oklch(from var(--theme-50) 1 0.03 h);
+  }
+
+  .cardHover:hover:is(:global(.dark) *) {
+    background: oklch(from var(--canvas-800) 0.2 c h);
+  }
+
+  .cardHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .cardTitle {
+    color: var(--headings);
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+
+  .cardDescription {
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  .cardContent {
+    flex: 1;
+    padding: 1rem;
+    padding-top: 0;
+  }
+
+  .cardFooter {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 0;
+  }
+}

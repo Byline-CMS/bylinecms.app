@@ -1,0 +1,119 @@
+/* ---------------------------------------------------- */
+/* Two columns - sidebar second */
+
+.page-layout--two-columns--right-sticky .content {
+  max-width: 100%;
+  margin-bottom: 2.75rem;
+}
+
+.page-layout--two-columns--right-sticky .sidebar-second {
+  max-width: 100%;
+}
+
+@media (min-width: 960px) {
+  .page-layout--two-columns--right-sticky {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 0.4fr;
+    grid-template-areas: "content sidebar-second";
+    grid-column-gap: 36px;
+    align-items: start;
+  }
+
+  .page-layout--two-columns--right-sticky .content {
+    grid-area: content;
+    max-width: 100%;
+    margin-bottom: 3.75rem;
+  }
+
+  .page-layout--two-columns--right-sticky .sidebar-second {
+    grid-area: sidebar-second;
+    position: sticky;
+    max-width: 100%;
+    padding-right: 12px;
+    top: 95px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Two columns - sidebar first */
+
+.page-layout--two-columns--left-sticky .content {
+  max-width: 100%;
+  margin-bottom: 3.75rem;
+}
+
+.page-layout--two-columns--left-sticky .sidebar-first {
+  max-width: 100%;
+}
+
+@media (min-width: 960px) {
+  .page-layout--two-columns--left-sticky {
+    display: grid;
+    grid-template-columns: 0.4fr minmax(0, 1fr);
+    grid-template-areas: "sidebar-first content";
+    grid-column-gap: 36px;
+    align-items: start;
+  }
+
+  .page-layout--two-columns--left-sticky .content {
+    grid-area: content;
+    max-width: 100%;
+    margin-bottom: 1.75rem;
+  }
+
+  .page-layout--two-columns--left-sticky .sidebar-first {
+    grid-area: sidebar-first;
+    position: sticky;
+    max-width: 100%;
+    padding-right: 12px;
+    top: 0;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Three columns - sidebar first and second */
+
+.page-layout--two-columns--both-sticky .content {
+  max-width: 100%;
+  margin-bottom: 3.75rem;
+}
+
+.page-layout--two-columns--both-sticky .sidebar-first {
+  max-width: 100%;
+}
+
+.page-layout--two-columns--both-sticky .sidebar-second {
+  max-width: 100%;
+}
+
+@media (min-width: 960px) {
+  .page-layout--two-columns--both-sticky {
+    display: grid;
+    grid-template-columns: 0.4fr minmax(0, 1fr) 0.45fr;
+    grid-template-areas: "sidebar-first content sidebar-second";
+    grid-column-gap: 36px;
+    align-items: start;
+  }
+
+  .page-layout--two-columns--both-sticky .content {
+    grid-area: content;
+    max-width: 100%;
+    margin-bottom: 1.75rem;
+  }
+
+  .page-layout--two-columns--both-sticky .sidebar-first {
+    grid-area: sidebar-first;
+    position: sticky;
+    max-width: 100%;
+    padding-right: 12px;
+    top: 0;
+  }
+
+  .page-layout--two-columns--both-sticky .sidebar-second {
+    grid-area: sidebar-second;
+    position: sticky;
+    max-width: 100%;
+    padding-right: 12px;
+    top: 0;
+  }
+}

@@ -1,0 +1,131 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+@layer infonomic-components {
+
+  .dropdown-content,
+  .dropdown-subcontent {
+    z-index: 20;
+    background-color: var(--canvas-25);
+    padding: 4px;
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+    border-width: var(--border-width-thin);
+    border-color: var(--border-color);
+    border-style: var(--border-style-solid);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+
+    &[data-side="top"] {
+      animation-name: slideDownAndFade;
+    }
+
+    &[data-side="right"] {
+      animation-name: slideLeftAndFade;
+    }
+
+    &[data-side="bottom"] {
+      animation-name: slideUpAndFade;
+    }
+
+    &[data-side="left"] {
+      animation-name: slideRightAndFade;
+    }
+  }
+
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-1);
+    width: 100%;
+    padding: 5px 2px;
+    font-size: var(--font-size-sm);
+    transition: background-color 0.2s;
+    cursor: default;
+    outline: none;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: var(--canvas-50);
+  }
+
+  .dropdown-separator {
+    margin: 0 auto;
+    width: 90%;
+    background-color: var(--border-color);
+    margin: var(--spacing-1) 0;
+    border-top-width: var(--border-width-thin);
+    border-top-color: var(--border-color);
+    border-top-style: var(--border-style-solid);
+  }
+
+  /* 🌙 Dark via `.dark` class. We rely on the 
+  * consuming application to detect a user's preferred
+  * color scheme - either by header or cookie, and set
+  * a root html class accordingly
+  */
+  :global(.dark) {
+
+    .dropdown-content:not(:where([class~="not-dark"], [class~="not-dark"] *)),
+    .dropdown-subcontent:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      background-color: var(--canvas-800);
+    }
+
+    .dropdown-item:hover:not(:where([class~="not-dark"], [class~="not-dark"] *)),
+    .dropdown-item:focus:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      background-color: var(--canvas-700);
+    }
+  }
+
+  @keyframes slideUpAndFade {
+    from {
+      opacity: 0;
+      transform: translateY(2px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideRightAndFade {
+    from {
+      opacity: 0;
+      transform: translateX(-2px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideDownAndFade {
+    from {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideLeftAndFade {
+    from {
+      opacity: 0;
+      transform: translateX(2px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+}

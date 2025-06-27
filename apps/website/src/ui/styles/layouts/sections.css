@@ -1,0 +1,3 @@
+.section-layout section:last-of-type > div {
+  padding-bottom: 48px;
+}

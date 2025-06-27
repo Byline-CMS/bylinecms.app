@@ -1,0 +1,9 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+@layer infonomic-components {
+  .text-area {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 0.5rem;
+  }
+}

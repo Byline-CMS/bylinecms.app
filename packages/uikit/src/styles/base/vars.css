@@ -1,0 +1,188 @@
+@layer infonomic-base {
+  :root {
+    /* ========================================
+       BREAKPOINTS
+    ======================================== */
+    --breakpoint-xs: 480px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    /* our container component will set max width to common screen size */
+    --breakpoint-xl: 1320px;
+    --breakpoint-2xl: 1536px;
+
+    /* 12px */
+    --font-size-xs: 0.75rem;
+    /* 14px */
+    --font-size-sm: 0.875rem;
+    /* 16px */
+    --font-size-base: 1rem;
+    /* 18px */
+    --font-size-lg: 1.125rem;
+    /* 20px */
+    --font-size-xl: 1.25rem;
+    /* 24px */
+    --font-size-2xl: 1.5rem;
+    /* 30px */
+    --font-size-3xl: 1.875rem;
+    /* 36px */
+    --font-size-4xl: 2.25rem;
+    /* 42px */
+    --font-size-5xl: 2.625rem;
+    /* 48px */
+    --font-size-6xl: 3rem;
+    /* 54px */
+    --font-size-7xl: 3.375rem;
+    /* 60px */
+    --font-size-8xl: 3.75rem;
+
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-ultrabold: 900;
+
+    --line-height-tight: 1.1;
+    --line-height-snug: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --line-height-loose: 2;
+
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.05em;
+
+    /* ========================================
+       SPACING SYSTEM (8px grid)
+    ======================================== */
+    --spacing-0: 0px;
+    --spacing-1: 4px;
+    --spacing-2: 8px;
+    --spacing-3: 12px;
+    --spacing-4: 16px;
+    --spacing-5: 20px;
+    --spacing-6: 24px;
+    --spacing-8: 32px;
+    --spacing-10: 40px;
+    --spacing-12: 48px;
+    --spacing-16: 64px;
+    --spacing-20: 80px;
+    --spacing-24: 96px;
+    --spacing-32: 128px;
+
+    /* ========================================
+       BORDER & RADIUS
+    ======================================== */
+    --border-radius-none: 0px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-2xl: 24px;
+    --border-radius-full: 9999px;
+
+    --border-width-thin: 1px;
+    --border-width-normal: 2px;
+    --border-width-thick: 4px;
+
+    --border-style-solid: solid;
+    --border-style-dashed: dashed;
+    --border-style-dotted: dotted;
+
+    /* ========================================
+       RINGS
+    ======================================== */
+
+    --ring-offset-width: 2px;
+    --ring-inset: ;
+    --ring-shadow: 0 0 #0000;
+
+    /* ========================================
+       SHADOWS
+    ======================================== */
+
+    --shadow: 0 0 #0000;
+    --shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0px 8px 16px rgba(0, 0, 0, 0.2);
+
+    /* ========================================
+       TRANSITIONS
+    ======================================== */
+    --transition-fast: 175ms ease-in-out;
+    --transition-normal: 230ms ease-in-out;
+    --transition-slow: 400ms ease-in-out;
+
+    /* ========================================
+       Z-INDEX SYSTEM
+    ======================================== */
+    --z-index-low: 10;
+    --z-index-medium: 100;
+    --z-index-high: 1000;
+    --z-index-modal: 1050;
+    --z-index-toast: 1100;
+
+    /* ========================================
+       OPACITY LEVELS
+    ======================================== */
+    --opacity-0: 0;
+    --opacity-25: 0.25;
+    --opacity-50: 0.5;
+    --opacity-75: 0.75;
+    --opacity-100: 1;
+
+    /* ========================================
+       GRID SYSTEM
+    ======================================== */
+    --grid-columns-2: 2;
+    --grid-columns-3: 3;
+    --grid-columns-4: 4;
+    --grid-columns-5: 5;
+    --grid-columns-6: 6;
+    --grid-columns-7: 7;
+    --grid-columns-8: 8;
+    --grid-columns-9: 9;
+    --grid-columns-10: 10;
+    --grid-columns-11: 11;
+    --grid-columns-12: 12;
+    --grid-gap-sm: 8px;
+    --grid-gap-md: 16px;
+    --grid-gap-lg: 24px;
+    --grid-column-size-xs: 240px;
+    --grid-column-size-sm: 260px;
+    --grid-column-size-md: 320px;
+    --grid-column-size-lg: 480px;
+
+    /* ========================================
+       GAP SYSTEM (For Grid & Flexbox)
+    ======================================== */
+    --gap-0: var(--spacing-0);
+    --gap-1: var(--spacing-1);
+    --gap-2: var(--spacing-2);
+    --gap-3: var(--spacing-3);
+    --gap-4: var(--spacing-4);
+    --gap-5: var(--spacing-5);
+    --gap-6: var(--spacing-6);
+    --gap-8: var(--spacing-8);
+    --gap-10: var(--spacing-10);
+    --gap-12: var(--spacing-12);
+    --gap-16: var(--spacing-16);
+    --gap-20: var(--spacing-20);
+    --gap-24: var(--spacing-24);
+    --gap-32: var(--spacing-32);
+
+    /* ========================================
+       FLEXBOX HELPERS
+    ======================================== */
+    --flex-row: row;
+    --flex-column: column;
+    --flex-wrap: wrap;
+    --flex-nowrap: nowrap;
+    --flex-center: center;
+  }
+}

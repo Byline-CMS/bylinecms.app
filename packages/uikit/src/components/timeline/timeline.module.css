@@ -1,0 +1,87 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+@layer infonomic-components {
+  .timeline {
+    margin-left: var(--spacing-2);
+  }
+
+  .timeline-root {
+    position: relative;
+    list-style: none;
+    margin-left: var(--spacing-2);
+    padding-left: var(--spacing-8);
+    border-left-width: var(--border-width-thin);
+    border-left-color: var(--border-color);
+    border-left-style: var(--border-style-solid);
+  }
+
+  .timeline-item {
+    margin: 0 0 var(--spacing-6) 0;
+  }
+
+  /* 'absolute block flex items-center justify-center w-[36px] h-[36px] rounded-full -mt-[3px] sm:mt-0 -left-[18px] border-[6px] bg-secondary-600 dark:bg-secondary-900 border-gray-50 dark:border-canvas-600', */
+  .timeline-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-top: -3px;
+    left: -18px;
+    border-width: 6px;
+    color: white;
+    background-color: var(--primary-600);
+    border-color: var(--gray-50);
+  }
+
+  .timeline-icon svg {
+    display: block;
+    width: 60%;
+    color: white;
+  }
+
+  /* 'text-[1.5rem] sm:text-[1.57rem] leading-[1.2] !m-0 font-semibold' */
+  .timeline-heading {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* 'block mt-2 mb-2 text-[0.9em] font-medium leading-none text-gray-900 dark:text-gray-100' */
+  .timeline-date {
+    display: block;
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-2);
+    font-size: 0.9em;
+    font-weight: var(--font-weight-medium);
+    line-height: 0;
+    color: var(--gray-600);
+  }
+
+  /* '[&_p]:m-0 [&_p]:mb-4 [&_p]:sm:m-0 [&_p]:sm:mb-4 text-lg font-normal text-gray-900 dark:text-gray-300' */
+  .timeline-content {
+    margin: 0;
+    margin-bottom: var(--spacing-4);
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-normal);
+
+    & p {
+      margin: 0;
+      margin-bottom: var(--spacing-4);
+    }
+  }
+
+  /* 🌙 Dark via `.dark` class. We rely on the 
+  * consuming application to detect a user's preferred
+  * color scheme - either by header or cookie, and set
+  * a root html class accordingly
+  */
+  :global(.dark) {
+    .timeline-icon:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      border-color: var(--canvas-600);
+    }
+  }
+}

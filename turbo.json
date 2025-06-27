@@ -1,0 +1,49 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "ui": "stream",
+  "tasks": {
+    "build": {
+      "cache": false,
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        "build/**"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "dependsOn": [
+        "^dev"
+      ],
+      "outputs": [],
+      "env": [
+        "NODE_ENV"
+      ],
+      "persistent": true
+    },
+    "dev:seed": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "lint": {
+      "outputs": []
+    },
+    "typecheck": {
+      "outputs": []
+    },
+    "test": {
+      "outputs": []
+    },
+    "start": {
+      "cache": false,
+      "dependsOn": [
+        "^start"
+      ]
+    }
+  },
+  "globalEnv": []
+}

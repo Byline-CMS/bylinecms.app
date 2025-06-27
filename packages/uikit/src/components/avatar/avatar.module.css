@@ -1,0 +1,54 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+@layer infonomic-components {
+
+  /* relative inline-flex h-10 w-10 rounded-full */
+  .avatar-root {
+    position: relative;
+    display: inline-flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  .avatar-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* flex h-full w-full items-center justify-center rounded-full bg-white dark:bg-gray-800 */
+  .avatar-fallback {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color-white);
+  }
+
+
+  .avatar-text {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    color: var(--gray-700);
+  }
+
+  /* 🌙 Dark via `.dark` class. We rely on the 
+  * consuming application to detect a user's preferred
+  * color scheme - either by header or cookie, and set
+  * a root html class accordingly
+  */
+  :global(.dark) {
+    .avatar-fallback {
+      background-color: var(--gray-800);
+    }
+
+    .avatar-text {
+      color: var(--gray-400);
+    }
+  }
+}

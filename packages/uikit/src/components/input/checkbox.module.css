@@ -1,0 +1,267 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+@layer infonomic-components {
+  .container {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2);
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  .checkbox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-normal);
+  }
+
+  .checkbox[data-state="checked"] {
+    --ring-offset-color: var(--background);
+    --ring-offset-shadow: var(--ring-inset) 0 0 0 var(--ring-offset-width) var(--ring-offset-color);
+    --ring-shadow: var(--ring-inset) 0 0 0 calc(1px + var(--ring-offset-width)) var(--ring-color);
+    box-shadow: var(--ring-offset-shadow), var(--ring-shadow), var(--shadow, 0 0 #0000);
+  }
+
+  .checkbox:disabled,
+  .checkbox[disabled] {
+    pointer-events: none;
+  }
+
+  .indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    color: var(--checkbox-icon-color);
+  }
+
+  /* Style for the "checked" state */
+  .indicator[data-state="checked"] .icon {
+    animation: checkBoxIn 0.3s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Style for the "unchecked" state */
+  .indicator[data-state="unchecked"] .icon {
+    animation: checkBoxOut 0.2s ease-in;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  .label {
+    margin-left: 0.25rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--label-color);
+  }
+
+  .checkbox:disabled~.label,
+  .checkbox[disabled]~.label {
+    pointer-events: none;
+  }
+
+  .errorText {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: red;
+  }
+
+  /* Sizes */
+  .sm {
+    width: 18px;
+    height: 18px;
+  }
+
+  .md {
+    width: 20px;
+    height: 20px;
+  }
+
+  .lg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Variants */
+  .outlined {
+    border: 2px solid var(--checkbox-variant-outlined-border);
+    --checkbox-icon-color: white;
+  }
+
+  .outlined[data-state="checked"] {
+    --ring-color: var(--checkbox-variant-outline-ring-color);
+    background-color: var(--checkbox-variant-outlined);
+  }
+
+  .filled {
+    background-color: var(--checkbox-variant-filled);
+    --checkbox-icon-color: white;
+  }
+
+  /* Intents */
+  .primary {
+    --checkbox-variant-outlined-border: var(--primary-400);
+    --checkbox-variant-outlined: var(--primary-400);
+    --checkbox-variant-outlined-hover-border: var(--primary-500);
+    --checkbox-variant-outline-ring-color: var(--primary-400);
+    --checkbox-variant-filled: var(--primary-400);
+  }
+
+  .secondary {
+    --checkbox-variant-outlined-border: var(--secondary-500);
+    --checkbox-variant-outlined: var(--secondary-500);
+    --checkbox-variant-outlined-hover-border: var(--secondary-500);
+    --checkbox-variant-outline-ring-color: var(--secondary-500);
+    --checkbox-variant-filled: var(--secondary-500);
+  }
+
+  .noeffect {
+    --checkbox-variant-outlined-border: var(--gray-400);
+    --checkbox-variant-outlined: var(--gray-400);
+    --checkbox-variant-outlined-hover-border: var(--gray-400);
+    --checkbox-variant-outline-ring-color: var(--gray-400);
+    --checkbox-variant-filled: var(--gray-400);
+  }
+
+  .success {
+    --checkbox-variant-outlined-border: var(--green-400);
+    --checkbox-variant-outlined: var(--green-400);
+    --checkbox-variant-outlined-hover-border: var(--green-400);
+    --checkbox-variant-outline-ring-color: var(--green-400);
+    --checkbox-variant-filled: var(--green-400);
+  }
+
+  .info {
+    --checkbox-variant-outlined-border: var(--blue-400);
+    --checkbox-variant-outlined: var(--blue-400);
+    --checkbox-variant-outlined-hover-border: var(--blue-400);
+    --checkbox-variant-outline-ring-color: var(--blue-400);
+    --checkbox-variant-filled: var(--blue-400);
+  }
+
+  .warning {
+    --checkbox-variant-outlined-border: var(--yellow-400);
+    --checkbox-variant-outlined: var(--yellow-400);
+    --checkbox-variant-outlined-hover-border: var(--yellow-400);
+    --checkbox-variant-outline-ring-color: var(--yellow-400);
+    --checkbox-variant-filled: var(--yellow-400);
+  }
+
+  .danger {
+    --checkbox-variant-outlined-border: var(--red-400);
+    --checkbox-variant-outlined: var(--red-400);
+    --checkbox-variant-outlined-hover-border: var(--red-400);
+    --checkbox-variant-outline-ring-color: var(--red-400);
+    --checkbox-variant-filled: var(--red-400);
+  }
+
+  /* 🌙 Dark via `.dark` class. We rely on the 
+  * consuming application to detect a user's preferred
+  * color scheme - either by header or cookie, and set
+  * a root html class accordingly
+  */
+  :global(.dark) {
+
+    /* Intents */
+    .primary:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --checkbox-variant-outlined-border: var(--primary-300);
+      --checkbox-variant-outlined: var(--primary-300);
+      --checkbox-variant-outlined-hover-border: var(--primary-500);
+      --checkbox-variant-outline-ring-color: var(--primary-300);
+      --checkbox-variant-filled: var(--primary-500);
+    }
+
+    .secondary:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --checkbox-variant-outlined-border: var(--secondary-500);
+      --checkbox-variant-outlined: var(--secondary-500);
+      --checkbox-variant-outlined-hover-border: var(--secondary-500);
+      --checkbox-variant-outline-ring-color: var(--secondary-500);
+      --checkbox-variant-filled: var(--secondary-500);
+    }
+
+    .noeffect:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --checkbox-variant-outlined-border: var(--gray-400);
+      --checkbox-variant-outlined: var(--gray-400);
+      --checkbox-variant-outlined-hover-border: var(--gray-400);
+      --checkbox-variant-outline-ring-color: var(--gray-400);
+      --checkbox-variant-filled: var(--gray-400);
+    }
+
+    .success:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --checkbox-variant-outlined-border: var(--green-400);
+      --checkbox-variant-outlined: var(--green-400);
+      --checkbox-variant-outlined-hover-border: var(--green-400);
+      --checkbox-variant-outline-ring-color: var(--green-400);
+      --checkbox-variant-filled: var(--green-400);
+    }
+
+    .info:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --checkbox-variant-outlined-border: var(--blue-400);
+      --checkbox-variant-outlined: var(--blue-400);
+      --checkbox-variant-outlined-hover-border: var(--blue-400);
+      --checkbox-variant-outline-ring-color: var(--blue-400);
+      --checkbox-variant-filled: var(--blue-400);
+    }
+
+    .warning:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --checkbox-variant-outlined-border: var(--yellow-400);
+      --checkbox-variant-outlined: var(--yellow-400);
+      --checkbox-variant-outlined-hover-border: var(--yellow-400);
+      --checkbox-variant-outline-ring-color: var(--yellow-400);
+      --checkbox-variant-filled: var(--yellow-400);
+    }
+
+    .danger:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --checkbox-variant-outlined-border: var(--red-400);
+      --checkbox-variant-outlined: var(--red-400);
+      --checkbox-variant-outlined-hover-border: var(--red-400);
+      --checkbox-variant-outline-ring-color: var(--red-400);
+      --checkbox-variant-filled: var(--red-400);
+    }
+  }
+
+  @keyframes checkBoxIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+      /* Overshoot */
+    }
+
+    80% {
+      transform: scale(0.9);
+      /* Slight bounce back */
+    }
+
+    100% {
+      transform: scale(1);
+      /* Settle */
+    }
+  }
+
+  /* Define keyframes for the "unchecked" state */
+  @keyframes checkBoxOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
+}

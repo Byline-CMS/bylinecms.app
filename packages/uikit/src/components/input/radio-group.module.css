@@ -1,0 +1,219 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+/* 'border-collapse w-full text-sm text-left text-gray-700 dark:text-gray-400 m-0', */
+@layer infonomic-components {
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-2);
+  }
+
+  .item-container {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2);
+  }
+
+  .item {
+    all: unset;
+    width: 18px;
+    height: 18px;
+    border-radius: var(--border-radius-full);
+    border: 2px solid var(--radio-border);
+    transition: all var(--transition-normal);
+  }
+
+  .item[data-state="checked"] {
+    --ring-offset-color: var(--background);
+    --ring-offset-shadow: var(--ring-inset) 0 0 0 var(--ring-offset-width) var(--ring-offset-color);
+    --ring-shadow: var(--ring-inset) 0 0 0 calc(1px + var(--ring-offset-width)) var(--ring-color);
+    box-shadow: var(--ring-offset-shadow), var(--ring-shadow), var(--shadow, 0 0 #0000);
+  }
+
+  .item:disabled,
+  .item[disabled] {
+    pointer-events: none;
+  }
+
+  /* Style for the "checked" state */
+  .indicator[data-state="checked"] {
+    animation: radioIn 0.3s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Style for the "unchecked" state */
+  .indicator[data-state="unchecked"] {
+    animation: radioOut 0.2s ease-in;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  .indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background-color: var(--radio-indicator-color);
+    }
+  }
+
+  .label {
+    color: var(--foreground);
+    font-size: 15px;
+    line-height: 1;
+    padding-left: var(--spacing-2);
+  }
+
+  .row .label {
+    padding-left: 0;
+    padding-right: var(--spacing-4)
+  }
+
+
+  /* Intents */
+  .primary {
+    --radio-border: var(--primary-400);
+    /* --ring-color: var(--primary-400); */
+    --radio-indicator-color: var(--primary-400);
+  }
+
+  .secondary {
+    --radio-border: var(--secondary-400);
+    /* --ring-color: var(--secondary-400); */
+    --radio-indicator-color: var(--secondary-400);
+  }
+
+  .noeffect {
+    --radio-border: var(--gray-400);
+    /* --ring-color: var(--secondary-400); */
+    --radio-indicator-color: var(--gray-400);
+  }
+
+  .success {
+    --radio-border: var(--green-400);
+    /* --ring-color: var(--secondary-400); */
+    --radio-indicator-color: var(--green-400);
+  }
+
+  .info {
+    --radio-border: var(--blue-400);
+    /* --ring-color: var(--secondary-400); */
+    --radio-indicator-color: var(--blue-400);
+  }
+
+  .warning {
+    --radio-border: var(--yellow-400);
+    /* --ring-color: var(--secondary-400); */
+    --radio-indicator-color: var(--yellow-400);
+  }
+
+  .danger {
+    --radio-border: var(--red-400);
+    /* --ring-color: var(--secondary-400); */
+    --radio-indicator-color: var(--red-400);
+  }
+
+  /* 🌙 Dark via `.dark` class. We rely on the 
+  * consuming application to detect a user's preferred
+  * color scheme - either by header or cookie, and set
+  * a root html class accordingly
+  */
+  :global(.dark) {
+
+    /* Intents */
+    .primary:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --radio-border: var(--primary-300);
+      /* --ring-color: var(--primary-400); */
+      --radio-indicator-color: var(--primary-300);
+    }
+
+    .secondary:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --radio-border: var(--secondary-500);
+      /* --ring-color: var(--secondary-400); */
+      --radio-indicator-color: var(--secondary-500);
+    }
+
+    .noeffect:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      ---radio-border: var(--gray-400);
+      /* --ring-color: var(--secondary-400); */
+      --radio-indicator-color: var(--gray-400);
+    }
+
+    .success:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --radio-border: var(--green-400);
+      /* --ring-color: var(--secondary-400); */
+      --radio-indicator-color: var(--green-400);
+    }
+
+    .info:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --radio-border: var(--blue-400);
+      /* --ring-color: var(--secondary-400); */
+      --radio-indicator-color: var(--blue-400);
+    }
+
+    .warning:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --radio-border: var(--yellow-400);
+      /* --ring-color: var(--secondary-400); */
+      --radio-indicator-color: var(--yellow-400);
+    }
+
+    .danger:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      --radio-border: var(--red-400);
+      /* --ring-color: var(--secondary-400); */
+      --radio-indicator-color: var(--red-400);
+    }
+  }
+
+  @keyframes radioIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+      /* Overshoot */
+    }
+
+    80% {
+      transform: scale(0.9);
+      /* Slight bounce back */
+    }
+
+    100% {
+      transform: scale(1);
+      /* Settle */
+    }
+  }
+
+  /* Define keyframes for the "unchecked" state */
+  @keyframes radioOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
+}

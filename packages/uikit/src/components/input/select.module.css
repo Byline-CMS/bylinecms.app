@@ -1,0 +1,75 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+@layer infonomic-components {
+  .content {
+    z-index: 50;
+  }
+
+  .viewport {
+    z-index: 50;
+    margin-top: 2px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--border-radius-md);
+    background-color: var(--background);
+    padding: 6px;
+  }
+
+  .viewport:is(:global(.dark) *) {
+    background: var(--canvas-800);
+  }
+
+  .group {
+    z-index: 50;
+  }
+
+  .scroll-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--border-radius-md);
+    background-color: var(--background);
+    padding: 2px;
+  }
+
+  .scroll-button:is(:global(.dark) *) {
+    background: var(--canvas-800);
+  }
+
+  .select-item {
+    position: relative;
+    user-select: none;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1;
+    padding-right: 35px;
+    padding-left: 25px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+  }
+
+  .select-item[data-disabled] {
+    color: var(--disabled-text-color, #e0e0e0);
+    pointer-events: none;
+  }
+
+  .select-item[data-highlighted] {
+    outline: none;
+    background-color: var(--highlight-bg-color, #e0e0e0);
+    color: var(--highlight-text-color, #000000);
+  }
+
+  .select-item-indicator {
+    position: absolute;
+    left: 0;
+    width: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

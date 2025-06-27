@@ -1,0 +1,114 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+@layer infonomic-components {
+  .alert {
+    display: flex;
+    align-items: start;
+    width: 100%;
+    gap: var(--gap-2);
+    border-radius: var(--border-radius-md);
+    padding: 16px;
+    font-family: inherit;
+    font-weight: normal;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--alert-border);
+    background-color: var(--alert-background);
+    margin-bottom: 1rem;
+  }
+
+  .alert-with-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    min-width: 24px;
+    min-height: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-top: -2px;
+  }
+
+  .close svg {
+    fill: white
+  }
+
+  .fade {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  .header {
+    display: flex;
+    align-items: start;
+    width: 100%;
+    margin-bottom: var(--spacing-2);
+    gap: var(--gap-2);
+  }
+
+  .title {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding-top: 1px;
+  }
+
+  .content {
+    padding-top: 1px;
+    font-size: var(--font-size-sm);
+  }
+
+  .content:first-child {
+    margin-top: 0;
+  }
+
+  /* Intents */
+  .primary {
+    --alert-border: var(--primary-300);
+    --alert-background: oklch(from var(--primary-500) l c h / 0.1);
+  }
+
+  .secondary {
+    --alert-border: var(--secondary-300);
+    --alert-background: oklch(from var(--secondary-500) l c h / 0.1);
+  }
+
+  .noeffect {
+    --alert-border: var(--gray-300);
+    --alert-background: oklch(from var(--gray-500) l c h / 0.1);
+  }
+
+  .success {
+    --alert-border: var(--green-300);
+    --alert-background: oklch(from var(--green-500) l c h / 0.1);
+  }
+
+  .info {
+    --alert-border: var(--blue-300);
+    --alert-background: oklch(from var(--blue-500) l c h / 0.1);
+  }
+
+  .warning {
+    --alert-border: var(--yellow-300);
+    --alert-background: oklch(from var(--yellow-500) l c h / 0.1);
+  }
+
+  .danger {
+    --alert-border: var(--red-300);
+    --alert-background: oklch(from var(--red-500) l c h / 0.1);
+  }
+}

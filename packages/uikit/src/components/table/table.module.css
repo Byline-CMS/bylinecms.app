@@ -1,0 +1,100 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+/* 'border-collapse w-full text-sm text-left text-gray-700 dark:text-gray-400 m-0', */
+@layer infonomic-components {
+
+  /* 'table--container break-normal overflow-hidden relative shadow-md rounded-md my-[16px] dark:border dark:border-canvas-700', */
+  .table-container {
+    display: block;
+    overflow: hidden;
+    word-break: normal;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
+  }
+
+  .table-scroller {
+    overflow-x: auto;
+    max-width: calc(100vw - 32px);
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: var(--font-size-sm);
+    text-align: left;
+  }
+
+  /* 'text-xs text-gray-700 uppercase bg-canvas-100 dark:bg-canvas-700 dark:text-gray-400', */
+  .table-header {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    background-color: var(--canvas-50);
+  }
+
+  /* 'border-b border-solid border-canvas-200 bg-white hover:bg-canvas-100/50 dark:border-canvas-700/60 dark:bg-canvas-800/50 dark:hover:bg-canvas-700/50', */
+  .table-row {
+    border-bottom: 1px solid var(--canvas-50);
+    background-color: white;
+  }
+
+  .table-row:hover {
+    background-color: var(--canvas-50);
+  }
+
+  /* 'whitespace-nowrap px-2 py-4 text-sm text-gray-700 uppercase bg-canvas-100/50 dark:bg-canvas-800/50 dark:text-gray-200', */
+  .table-heading-cell {
+    white-space: nowrap;
+    padding: var(--spacing-2) var(--spacing-2);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    background-color: var(--canvas-50);
+  }
+
+  /* not-prose px-2 py-2 text-sm [&_a]:underline */
+  .table-cell {
+    padding: var(--spacing-2);
+    font-size: var(--font-size-sm);
+
+    & a {
+      text-decoration: underline;
+    }
+  }
+
+  /* 'text-xs text-gray-700 uppercase bg-canvas-100 dark:bg-canvas-700 dark:text-gray-400', */
+  .table-footer {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    background-color: var(--canvas-100);
+  }
+
+  /* 🌙 Dark via `.dark` class. We rely on the 
+  * consuming application to detect a user's preferred
+  * color scheme - either by header or cookie, and set
+  * a root html class accordingly
+  */
+  :global(.dark) {
+    .table-header {
+      background-color: var(--canvas-700);
+    }
+
+    .table-row:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      border-bottom: 1px solid var(--canvas-700);
+      background-color: var(--canvas-800);
+    }
+
+    .table-row:hover:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      background-color: oklch(from var(--canvas-800) calc(l * 1.1) c h)
+    }
+
+    .table-heading-cell:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      background-color: oklch(from var(--canvas-800) calc(l * 1.1) c h);
+    }
+
+    .table-footer:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
+      background-color: var(--canvas-800);
+    }
+  }
+}

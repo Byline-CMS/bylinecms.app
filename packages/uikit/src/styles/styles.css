@@ -1,0 +1,6 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+
+@import "./base/base.css";
+@import "./utils/utils.css";
+@import "./theme/theme.css";
+@import "./components/components.css";

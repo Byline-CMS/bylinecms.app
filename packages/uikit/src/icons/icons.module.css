@@ -1,0 +1,147 @@
+@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-components;
+
+@layer infonomic-components {
+  .stroke-none {
+    stroke: none;
+  }
+
+  .stroke-current {
+    stroke: currentColor;
+  }
+
+  .stroke-gray {
+    stroke: var(--gray-800);
+  }
+
+  .stroke-gray:is(:global(.dark) *) {
+    stroke: var(--gray-300);
+  }
+
+  .stroke-contrast {
+    stroke: var(--gray-950);
+  }
+
+  .stroke-contrast:is(:global(.dark) *) {
+    stroke: var(--gray-100);
+  }
+
+  .stroke-primary {
+    stroke: var(--primary-500);
+  }
+
+  .stroke-primary:is(:global(.dark) *) {
+    stroke: var(--primary-400);
+  }
+
+  .stroke-secondary {
+    stroke: var(--secondary-500);
+  }
+
+  .stroke-secondary:is(:global(.dark) *) {
+    stroke: var(--secondary-400);
+  }
+
+  .stroke-success {
+    stroke: var(--green-500);
+  }
+
+  .stroke-success:is(:global(.dark) *) {
+    stroke: var(--green-400);
+  }
+
+  .stroke-info {
+    stroke: var(--blue-500);
+  }
+
+  .stroke-info:is(:global(.dark) *) {
+    stroke: var(--blue-400);
+  }
+
+  .stroke-warning {
+    stroke: var(--yellow-500);
+  }
+
+  .stroke-warning:is(:global(.dark) *) {
+    stroke: var(--yellow-400);
+  }
+
+  .stroke-danger {
+    stroke: var(--red-500);
+  }
+
+  .stroke-danger:is(:global(.dark) *) {
+    stroke: var(--red-400);
+  }
+
+  .fill-none {
+    fill: none;
+  }
+
+  .fill-current {
+    fill: currentColor;
+  }
+
+  .fill-contrast {
+    fill: black;
+  }
+
+  .fill-contrast:is(:global(.dark) *) {
+    fill: white;
+  }
+
+  .fill-gray {
+    stroke: var(--gray-700);
+  }
+
+  .fill-gray:is(:global(.dark) *) {
+    stroke: var(--gray-300);
+  }
+
+  .fill-primary {
+    fill: var(--primary-500);
+  }
+
+  .fill-primary:is(:global(.dark) *) {
+    fill: var(--primary-400);
+  }
+
+  .fill-secondary {
+    fill: var(--secondary-500);
+  }
+
+  .fill-secondary:is(:global(.dark) *) {
+    fill: var(--secondary-400);
+  }
+
+  .fill-success {
+    fill: var(--green-500);
+  }
+
+  .fill-success:is(:global(.dark) *) {
+    fill: var(--green-400);
+  }
+
+  .fill-info {
+    fill: var(--blue-500);
+  }
+
+  .fill-info:is(:global(.dark) *) {
+    fill: var(--blue-400);
+  }
+
+  .fill-warning {
+    fill: var(--yellow-500);
+  }
+
+  .fill-warning:is(:global(.dark) *) {
+    fill: var(--yellow-400);
+  }
+
+  .fill-danger {
+    fill: var(--red-500);
+  }
+
+  .fill-danger:is(:global(.dark) *) {
+    fill: var(--red-400);
+  }
+}
