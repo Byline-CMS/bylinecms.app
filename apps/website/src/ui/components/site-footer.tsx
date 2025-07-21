@@ -23,7 +23,7 @@
 
 import { Link } from '@tanstack/react-router'
 import { Code2, DiscIcon as Discord, Github, Mail, Twitter } from 'lucide-react'
-import Logo from '@/images/byline-logo-v1'
+import Logo from '@/images/byline-logo'
 
 export function SiteFooter() {
   return (

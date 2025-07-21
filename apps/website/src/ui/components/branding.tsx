@@ -20,8 +20,8 @@
  */
 
 import { Link } from '@tanstack/react-router'
-import Logo from '@/images/byline-logo-v1'
-// import logo from '../../images/byline-logo-v1.svg'
+import Logo from '@/images/byline-logo'
+// import logo from '../../images/byline-logo.svg'
 
 export function Branding() {
   return (
