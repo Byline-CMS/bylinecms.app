@@ -1,5 +1,3 @@
-[![CLA assistant](https://cla-assistant.io/readme/badge/Byline-CMS/bylinecms.app)](https://cla-assistant.io/Byline-CMS/bylinecms.app)
-
 # Byline CMS
 
 
@@ -119,74 +117,7 @@ Plus lots more... whew!
 
 ## Getting Started
 
-At the moment, the project is a prototype, but it builds and runs if you wanted to poke around or follow along. Note that we're currently combining the dashboard, api, and configuration into apps/dashboard for prototype development only. 
-
-### 1. Clone and install dependencies
-
-```sh
-# git clone this repo
-git clone git@github.com:Byline-CMS/bylinecms.app.git
-cd bylinecms.app
-# install deps
-pnpm install
-# build once so that all workspace packages and apps have their deps
-pnpm build
-```
-
-### 2 Setup your database. 
-
-The prototype currently requires PostgreSQL. There is a docker-compose.yml in the root postgres directory. Note that the default root password is set to 'test' in docker-compose.yml.
-
-2.1. Create the 'data' subdirectory first, and then start postgres.
-
-```sh 
-# From the root of the project
-cd postgres
-mkdir data
-./postgres.sh up
-
-# And then 'down' if you want to remove the Docker container and network configuration when you're done.
-./postgres.sh down 
-```
-
-2.2. Initialize the database and schema
-```sh
-# Copy .env.example to .env in the apps/dashboard directory. 
-# Read the notes in .env.example.
-cd apps/dashboard
-cp .env.example .env
-
-# Again, the default database root password is 'test' 
-# (assuming you're using our docker-compose.yml file).
-cd database && ./db_init
-cd ..
-
-# IMPORTANT: our ./db_init script sources (imports) common.sh, 
-# which has a hardcoded value for the name of the development database.
-# This is a 'foot gun' protection, so the script can only ever drop
-# and recreate this database name. If you'd like to use a database
-# name other than byline_dev - change the last line in common.sh, 
-# as well as your corresponding .env settings.
-# NOTE: While this project is in prototype development,
-# you can optionally skip drizzle:generate since the latest
-# migration will be included in the repo.
-pnpm drizzle:generate
-pnpm drizzle:migrate
-
-# Optionally seed the database with documents.
-# from /apps/dashboard
-tsx --env-file=.env database/seeds/seed-bulk-documents.ts 
-```
-
-### 3. Start dev mode
-
-Again, from the root of the project and start the dev environment.
-
-```sh
-pnpm dev
-```
-
-If you've built the project (above) and have postgres up and running, you should be able to view the prototype on http://localhost:5173/
+Visit https://github.com/Byline-CMS/bylinecms.app for instructions on getting started.
 
 Enjoy and stay tuned!
 
