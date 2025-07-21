@@ -27,7 +27,7 @@ import Logo from '@/images/byline-logo'
 
 export function SiteFooter() {
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-16">
+    <footer className="bg-gray-950 text-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">

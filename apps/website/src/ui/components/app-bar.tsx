@@ -1,34 +1,113 @@
 'use client'
 
-/**
- * Byline CMS
- *
- * Copyright © 2025 Anthony Bouch and contributors.
- *
- * This file is part of Byline CMS.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as
- * published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
- */
+import { forwardRef, useEffect, useState } from 'react'
+import { useNavigate, useRouterState } from '@tanstack/react-router'
 
-import { Branding } from './branding'
+import { Button, GithubIcon } from '@byline/uikit/react'
 
-export function AppBar() {
+import cx from 'classnames'
+
+import type { Locale } from '@/i18n/i18n-config'
+import { ThemeSwitch } from '@/ui/theme/theme-provider'
+
+import { Link } from '@tanstack/react-router'
+import { Branding } from '@/modules/home/branding'
+
+interface AppBarProps {
+  className?: string
+  lng: Locale
+}
+export type Ref = HTMLDivElement
+
+export const AppBar = forwardRef<Ref, AppBarProps>(function AppBar(
+  { className, lng, ...other },
+  ref
+) {
+  const location = useRouterState({ select: (s) => s.location })
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
+
+  const handleToggleMobileMenu = (event: React.MouseEvent<HTMLButtonElement> | null): void => {
+    if (event != null) event.stopPropagation()
+    // e.preventDefault()
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+
+  const handleMobileMenuClose = (): void => {
+    setMobileMenuOpen(false)
+  }
+
+  const handleWindowClick = (): void => {
+    setMobileMenuOpen(false)
+  }
+
+  useEffect(() => {
+    window.addEventListener('click', handleWindowClick)
+    return () => {
+      window.removeEventListener('click', handleWindowClick)
+    }
+  })
+
+  const handleScroll = (): void => {
+    const position = window.scrollY
+    if (position > 100) {
+      setHasScrolled(true)
+    } else {
+      setHasScrolled(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  })
+
+  const appBarBackground = hasScrolled
+    ? 'bg-white dark:bg-canvas-900 border-b border-gray-200/50 dark:border-gray-900/70'
+    : 'bg-transparent  backdrop-blur-md'
+  // const appBarBackground =
+  //   hasScrolled || pathName.length > 3
+  //     ? 'bg-primary-400 dark:bg-primary-900'
+  //     : 'border-b border-gray-800/50 bg-white dark:bg-black/80 backdrop-blur-md'
+
+  const appBarTextColor =
+    hasScrolled || location.pathname.length > 3
+      ? 'text-black fill-black dark:text-white dark:fill-white'
+      : 'text-black fill-black dark:text-white dark:fill-white'
+
+  const hamburgerColor =
+    hasScrolled || location.pathname.length > 3
+      ? 'bg-black before:bg-black after:bg-black dark:bg-white dark:before:bg-white dark:after:bg-white'
+      : 'bg-white before:bg-white after:bg-white'
+
+  const hamburgerColorMobileMenuOpen = 'bg-white before:bg-white after:bg-white'
+
   return (
-    <header className="h-[55px] fixed z-50 w-full max-w-full bg-white dark:bg-canvas-800 shadow p-4 text-lg font-semibold flex items-center justify-between">
-      <div className="branding-and-breadcrumbs flex items-center gap-4">
-        <Branding />
+    <header
+      id="header"
+      className={cx('sticky top-0 z-30 w-full', appBarBackground, className)}
+      ref={ref}
+      {...other}
+    >
+      <div
+        id="app-bar"
+        className={cx(
+          'app-bar sticky top-0 flex min-h-[60px] w-full items-center gap-4 pl-0 pr-[12px]',
+          'sm:gap-4 sm:pl-0 sm:pr-[18px]',
+          'transition-all duration-500 ease-out'
+        )}
+      >
+        <div className="lg:flex-initial mr-auto">
+          <Branding lng="en" hasScrolled={hasScrolled} pathName={location.pathname} />
+        </div>
+        {/* <LanguageMenu lng={lng} color={appBarTextColor} /> */}
+        <ThemeSwitch className="mr-2" />
+        <a className="block" href="https://github.com/Byline-CMS/bylinecms.app" target="_blank" rel="noreferrer">
+          <GithubIcon width="28px" height="28px" />
+        </a>
       </div>
     </header>
   )
-}
+})

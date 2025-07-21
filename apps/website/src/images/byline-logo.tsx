@@ -1,10 +1,11 @@
-const SvgComponent = () => (
+const SvgComponent = ({ className }: { className?: string }) => (
   <svg
     role="presentation"
     id="AW"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 512 512"
+    className={className}
   >
     <defs>
       <linearGradient

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,15 +11,31 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Byline CMS</title>
+  <script>
+    (() => {
+      const classList = document.documentElement.classList;
+      const style = document.documentElement.style;
+      const dark = window.matchMedia("(prefers-color-scheme: dark)");
+      if (
+        localStorage.theme === "dark" ||
+        (localStorage.theme == null && dark.matches)
+      ) {
+
+        classList.add("dark");
+        style.colorScheme = "dark";
+      } else {
+        classList.remove("dark");
+        style.colorScheme = "light";
+      }
+    })();
+  </script>
 </head>
 
-<style>
+<!-- <style>
   body {
-    margin: 0;
-    padding: 0;
     background-color: var(--canvas-900)
   }
-</style>
+</style> -->
 
 <body>
   <div id="root"></div>

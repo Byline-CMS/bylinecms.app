@@ -19,7 +19,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { type CustomErrorParams, z } from 'zod'
+import * as z from "zod";
 
 /**
  * integerFromStringSchema
@@ -35,7 +35,6 @@ export const integerFromStringSchema = z.coerce.number().int()
  *
  */
 export const urlSchema = z
-  .string()
   .url()
   .refine((val) => !val.endsWith('/'))
 
@@ -46,7 +45,6 @@ export const urlSchema = z
  *
  */
 export const base64Schema = z
-  .string()
   .base64()
   .transform((val) => Buffer.from(val, 'base64'))
 
@@ -55,7 +53,7 @@ export const base64Schema = z
  *
  * @description: Matches UUIDs in the format 123e4567-e89b-12d3-a456-426614174000
  */
-export const uuidSchema = z.string().uuid({
+export const uuidSchema = z.uuid({
   message:
     'Invalid UUID format. Must be a 36-character hex string with hyphens (e.g., 123e4567-e89b-12d3-a456-426614174000)',
 })
@@ -117,16 +115,16 @@ export const checkBoxAsBooleanSchema = (defaultValue = false) =>
  * @param name
  * @returns
  */
-export const requireIfEnabled = (
-  properties: string[],
-  name: string
-): [(data: any) => boolean, CustomErrorParams] => [
-    (data: any) => !data.enabled || properties.every((prop) => data[prop] !== undefined),
-    {
-      message: `Each of ${properties.join(' ')} is required when ${name} is enabled.`,
-      path: properties,
-    },
-  ]
+// export const requireIfEnabled = (
+//   properties: string[],
+//   name: string
+// ): [(data: any) => boolean, CustomErrorParams] => [
+//     (data: any) => !data.enabled || properties.every((prop) => data[prop] !== undefined),
+//     {
+//       message: `Each of ${properties.join(' ')} is required when ${name} is enabled.`,
+//       path: properties,
+//     },
+//   ]
 
 /**
  * passwordSchema
@@ -154,3 +152,8 @@ export const safeNumber = z.preprocess((val) => {
   }
   return val;
 }, z.number())
+
+export const dateTimeSchema = z.preprocess(
+  (val) => (val === '' || val == null) ? null : val,
+  z.coerce.date()
+)
