@@ -117,7 +117,7 @@ Plus lots more... whew!
 
 ## Getting Started
 
-Visit https://github.com/Byline-CMS/bylinecms.app for instructions on getting started.
+Visit https://github.com/Byline-CMS/bylinecms.dev for instructions on getting started.
 
 Enjoy and stay tuned!
 
