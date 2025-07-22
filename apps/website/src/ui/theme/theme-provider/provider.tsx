@@ -1,22 +1,15 @@
 'use client'
 
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
 import type { ReactNode } from 'react'
-
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { setTheme as setThemeApi } from '../set-theme.ts'
 import {
   PREFERS_DARK_MQ,
-  Theme,
-  ThemeSource,
   setPrefersColorScheme,
   setPrefersTheme,
+  Theme,
+  ThemeSource,
 } from './utils.ts'
-import { setTheme as setThemeApi } from '../set-theme.ts'
 
 // ThemeContext
 interface ThemeContextType {
@@ -66,7 +59,7 @@ function ThemeProvider({
         mediaQuery.removeEventListener('change', handleChange)
       }
     }
-  }, [theme, themeSource])
+  }, [themeSource])
 
   const contextValue = useMemo(() => {
     const setTheme = (prefers: Theme): void => {

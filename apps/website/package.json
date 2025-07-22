@@ -4,10 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "run-p dev:*",
-    "dev:vite": "vite",
-    "build": "run-s build:*",
-    "build:client": "tsc -p tsconfig.json && vite build",
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview",
     "clean": "rimraf node_modules dist build .turbo "
   },
   "dependencies": {

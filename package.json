@@ -1,5 +1,5 @@
 {
-  "name": "@byline/repo",
+  "name": "@byline/org",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -7,13 +7,9 @@
   "scripts": {
     "clean": "turbo run clean && rimraf node_modules",
     "build": "turbo run build",
-    "release": "turbo run release",
-    "start": "turbo run start",
+    "preview": "turbo run preview",
     "storybook": "turbo run storybook",
     "dev": "turbo run dev --parallel",
-    "tauri:dev": "turbo run tauri:dev",
-    "devturbo": "turbo run devturbo --parallel",
-    "dev:seed": "turbo run dev:seed --parallel",
     "lint": "turbo run lint --continue",
     "typecheck": "turbo run typecheck --continue",
     "test": "turbo run test",

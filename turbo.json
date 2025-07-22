@@ -38,11 +38,12 @@
     "test": {
       "outputs": []
     },
-    "start": {
+    "preview": {
       "cache": false,
       "dependsOn": [
-        "^start"
-      ]
+        "^preview"
+      ],
+      "persistent": true
     }
   },
   "globalEnv": []
