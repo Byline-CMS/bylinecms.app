@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Disallow: /admin/
+
+User-agent: ia_archiver
+Disallow: /

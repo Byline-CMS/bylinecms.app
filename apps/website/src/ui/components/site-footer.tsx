@@ -22,14 +22,13 @@
  */
 
 import { Link } from '@tanstack/react-router'
-import { Code2, DiscIcon as Discord, Github, Mail, Twitter } from 'lucide-react'
 import Logo from '@/images/byline-logo'
 
 export function SiteFooter() {
   return (
     <footer className="bg-gray-950 text-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-[1.3fr_0.9fr_1fr_0.8fr] gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-2">
@@ -42,20 +41,6 @@ export function SiteFooter() {
             <p className="text-gray-400">
               Building the future of content management, one commit at a time.
             </p>
-            <div className="flex space-x-4">
-              <Link to="/" href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Github className="w-5 h-5" />
-              </Link>
-              <Link to="/" href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
-              </Link>
-              <Link to="/" href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Discord className="w-5 h-5" />
-              </Link>
-              <Link to="/" href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Mail className="w-5 h-5" />
-              </Link>
-            </div>
           </div>
 
           <div>
@@ -65,7 +50,7 @@ export function SiteFooter() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/Byline-CMS/bylinecms.app"
+                  href="https://github.com/Byline-CMS/bylinecms.dev"
                   className="hover:text-white transition-colors"
                 >
                   Documentation
@@ -75,7 +60,7 @@ export function SiteFooter() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/Byline-CMS/bylinecms.app"
+                  href="https://github.com/Byline-CMS/bylinecms.dev"
                   className="hover:text-white transition-colors"
                 >
                   Roadmap
@@ -85,7 +70,7 @@ export function SiteFooter() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/Byline-CMS/bylinecms.app"
+                  href="https://github.com/Byline-CMS/bylinecms.dev"
                   className="hover:text-white transition-colors"
                 >
                   Contributing
@@ -95,7 +80,7 @@ export function SiteFooter() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/Byline-CMS/bylinecms.app"
+                  href="https://github.com/Byline-CMS/bylinecms.dev"
                   className="hover:text-white transition-colors"
                 >
                   Releases
@@ -111,7 +96,7 @@ export function SiteFooter() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/Byline-CMS/bylinecms.app/discussions/"
+                  href="https://github.com/Byline-CMS/bylinecms.dev/discussions/"
                   className="hover:text-white transition-colors"
                 >
                   GitHub Discussions

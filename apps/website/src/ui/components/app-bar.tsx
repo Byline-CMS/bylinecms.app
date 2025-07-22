@@ -102,7 +102,7 @@ export const AppBar = forwardRef<Ref, AppBarProps>(function AppBar(
         <ThemeSwitch className="mr-2" />
         <a
           className="block"
-          href="https://github.com/Byline-CMS/bylinecms.app"
+          href="https://github.com/Byline-CMS/bylinecms.dev"
           target="_blank"
           rel="noreferrer"
         >
