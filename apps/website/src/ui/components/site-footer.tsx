@@ -50,7 +50,7 @@ export function SiteFooter() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/Byline-CMS/bylinecms.dev"
+                  href="https://github.com/Byline-CMS/bylinecms.dev?tab=readme-ov-file#byline-cms"
                   className="hover:text-white transition-colors"
                 >
                   Documentation
@@ -60,7 +60,7 @@ export function SiteFooter() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/Byline-CMS/bylinecms.dev"
+                  href="https://github.com/Byline-CMS/bylinecms.dev?tab=readme-ov-file#byline-cms"
                   className="hover:text-white transition-colors"
                 >
                   Roadmap
@@ -70,7 +70,7 @@ export function SiteFooter() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/Byline-CMS/bylinecms.dev"
+                  href="https://github.com/Byline-CMS/bylinecms.dev?tab=readme-ov-file#byline-cms"
                   className="hover:text-white transition-colors"
                 >
                   Contributing
@@ -80,7 +80,7 @@ export function SiteFooter() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/Byline-CMS/bylinecms.dev"
+                  href="https://github.com/Byline-CMS/bylinecms.dev?tab=readme-ov-file#byline-cms"
                   className="hover:text-white transition-colors"
                 >
                   Releases
