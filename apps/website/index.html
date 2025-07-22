@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <title>Byline CMS</title>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -9,7 +10,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Byline" />
   <meta name="description" content="Byline CMS is a modern, open-source content management system." />
-  <meta name="application-name" content="Kept" />
+  <meta name="application-name" content="Byline" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="canonical" href="https://bylinecms.app" />
   <meta property="og:title" content="Byline - Home" />
@@ -30,23 +31,27 @@
   <meta name="twitter:image:alt" content="Byline - open source content management system." />
   <meta name="twitter:image:type" content="image/png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Byline CMS</title>
   <script>
     (() => {
       const classList = document.documentElement.classList;
       const style = document.documentElement.style;
-      const dark = window.matchMedia("(prefers-color-scheme: dark)");
-      if (
-        localStorage.theme === "dark" ||
-        (localStorage.theme == null && dark.matches)
-      ) {
-
+      const theme = localStorage.theme
+      // This site defaults to dark mode, but respects user preference if set.
+      // const dark = window.matchMedia("(prefers-color-scheme: dark)");
+      if (localStorage.theme == null) {
+        localStorage.setItem("theme", "dark");
         classList.add("dark");
         style.colorScheme = "dark";
       } else {
-        classList.remove("dark");
-        style.colorScheme = "light";
+        if (theme === "dark") {
+          classList.remove("light");
+          classList.add("dark");
+          style.colorScheme = "dark";
+        } else if (theme === "light") {
+          classList.remove("dark");
+          classList.add("light");
+          style.colorScheme = "light";
+        }
       }
     })();
   </script>
