@@ -1,0 +1,8 @@
+.component--language-switch ul li:first-child::after {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  top: calc(50% - 7px);
+  border-right: solid 1px #ccc;
+}

@@ -1,0 +1,11 @@
+.component--grid-two-column {
+  grid-template-areas: "first second";
+}
+
+.component-grid--two-column--first {
+  grid-area: first;
+}
+
+.component-grid--two-column--second {
+  grid-area: second;
+}

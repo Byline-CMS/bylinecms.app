@@ -1,0 +1,7 @@
+.component--previous-next {
+  transition: all 0.125s;
+}
+
+.component--previous-next:hover {
+  transform: translateY(-3px);
+}

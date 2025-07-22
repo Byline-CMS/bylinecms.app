@@ -1,0 +1,7 @@
+.component--heading-anchor .component--heading-anchor-icon {
+  opacity: 0;
+}
+
+.component--heading-anchor:hover .component--heading-anchor-icon {
+  opacity: 1;
+}

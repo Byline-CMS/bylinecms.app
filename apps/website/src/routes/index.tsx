@@ -19,24 +19,10 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Button, Card, Container, Section } from '@byline/uikit/react'
+import { Button, Card, Container, GithubIcon, Section } from '@byline/uikit/react'
 import { createFileRoute, Link } from '@tanstack/react-router'
-import {
-  ArrowRight,
-  Bot,
-  Code2,
-  Database,
-  DiscIcon as Discord,
-  ExternalLink,
-  Github,
-  Mail,
-  Moon,
-  Sun,
-  Twitter,
-  Users,
-  Zap,
-} from 'lucide-react'
-import { WYSIWYGAnimation } from '@/ui/components/wysiwyg-animation'
+import { Database, DiscIcon as Discord, Twitter, Users, Zap } from 'lucide-react'
+import { WYSIWYGAnimation } from '@/modules/home/wysiwyg-animation'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -45,16 +31,17 @@ export const Route = createFileRoute('/')({
 function Index() {
   return (
     <>
-        <Section className="mx-auto flex flex-col items-center justify-center px-6 pt-14 text-center md:pt-22">
+      <Section className="mx-auto flex flex-col items-center justify-center px-6 pt-14 text-center md:pt-22">
         <Container>
           <h1 className="mb-6 text-6xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Byline&nbsp;
             <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-amber-500 bg-clip-text text-transparent">
-             CMS
+              CMS
             </span>
           </h1>
           <p className="mb-12 max-w-2xl text-lg text-gray-900 dark:text-gray-200 sm:text-xl">
-            A modern, headless, fast, and AI-first CMS. Build content-driven applications with speed and flexibility.
+            A modern, headless, fast, and AI-first CMS. Build content-driven applications with speed
+            and flexibility.
           </p>
         </Container>
       </Section>
@@ -89,7 +76,7 @@ function Index() {
               </Card.Header>
             </Card>
 
-             <Card className="pb-4">
+            <Card className="pb-4">
               <Card.Header>
                 <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
                   <Zap className="w-6 h-6 text-green-600 dark:text-green-400" />
@@ -101,7 +88,7 @@ function Index() {
               </Card.Header>
             </Card>
 
-             <Card className="pb-4">
+            <Card className="pb-4">
               <Card.Header>
                 <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center">
                   <Users className="w-6 h-6 text-orange-600 dark:text-orange-400" />
@@ -132,10 +119,13 @@ function Index() {
               <Button
                 size="lg"
                 variant="outlined"
-                className="text-lg px-5 py-4 text-white border-white hover:bg-white hover:text-purple-600 bg-transparent"
+                className="group not-dark text-lg px-5 py-4 text-white border-white hover:bg-white hover:text-purple-600 bg-transparent"
               >
                 Follow Updates
-                <Twitter className="ml-2 w-5 h-5" />
+                <GithubIcon
+                  className="ml-2 w-5 h-5"
+                  svgClassName="fill-white group-hover:fill-purple-600"
+                />
               </Button>
             </div>
           </div>

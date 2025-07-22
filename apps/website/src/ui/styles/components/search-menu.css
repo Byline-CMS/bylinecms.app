@@ -1,0 +1,32 @@
+.component--search-menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  @apply text-slate-900;
+  min-width: 32px;
+  padding: 5px 7px;
+  border-radius: 4px;
+  border: dashed 0.5px transparent;
+  transition: all 250ms ease;
+}
+
+.component--search-menu:active,
+.component--search-menu:focus {
+  @apply border-slate-200;
+  outline: none !important;
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 4px;
+}
+
+.dark .component--search-menu:active,
+.dark .component--search-menu:focus {
+  @apply border-slate-200;
+}

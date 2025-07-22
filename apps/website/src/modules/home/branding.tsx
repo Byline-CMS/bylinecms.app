@@ -1,12 +1,8 @@
+import { Link } from '@tanstack/react-router'
 import cx from 'classnames'
 import type React from 'react'
-
-import { useTheme } from '@/ui/theme/theme-provider'
-
-import { Link } from '@tanstack/react-router'
 import type { Locale } from '@/i18n/i18n-config'
-import LogoWhite from '@/images/byline-typelogo-light'
-import LogoBlack from '@/images/byline-typelogo-dark'
+import Logo from '@/images/byline-logo'
 
 export function Branding({
   lng,
@@ -17,7 +13,6 @@ export function Branding({
   hasScrolled: boolean
   pathName: string
 }): React.JSX.Element {
-  const { theme } = useTheme()
   const brandingBackground =
     hasScrolled || pathName.length > 3 ? 'bg-transparent' : 'bg-transparent'
 
@@ -28,15 +23,10 @@ export function Branding({
         brandingBackground
       )}
     >
-      <div className="w-[110px] sm:w-[120px]">
-        <Link  to="/">
-          {theme === 'dark' ? (
-            <LogoWhite className="w-[110px]" />
-          ) : (
-            <LogoBlack className="w-[110px]" />
-          )}
-        </Link>
-      </div>
+      <Link to="/" className="flex items-center gap-3">
+        <Logo className="w-[29px] h-[29px]" />
+        <span className="text-[1.4rem] font-bold whitespace-nowrap">Byline</span>
+      </Link>
     </div>
   )
 }

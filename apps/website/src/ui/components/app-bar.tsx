@@ -1,17 +1,13 @@
 'use client'
 
-import { forwardRef, useEffect, useState } from 'react'
-import { useNavigate, useRouterState } from '@tanstack/react-router'
-
 import { Button, GithubIcon } from '@byline/uikit/react'
+import { Link, useNavigate, useRouterState } from '@tanstack/react-router'
 
 import cx from 'classnames'
-
+import { forwardRef, useEffect, useState } from 'react'
 import type { Locale } from '@/i18n/i18n-config'
-import { ThemeSwitch } from '@/ui/theme/theme-provider'
-
-import { Link } from '@tanstack/react-router'
 import { Branding } from '@/modules/home/branding'
+import { ThemeSwitch } from '@/ui/theme/theme-provider'
 
 interface AppBarProps {
   className?: string
@@ -104,7 +100,12 @@ export const AppBar = forwardRef<Ref, AppBarProps>(function AppBar(
         </div>
         {/* <LanguageMenu lng={lng} color={appBarTextColor} /> */}
         <ThemeSwitch className="mr-2" />
-        <a className="block" href="https://github.com/Byline-CMS/bylinecms.app" target="_blank" rel="noreferrer">
+        <a
+          className="block"
+          href="https://github.com/Byline-CMS/bylinecms.app"
+          target="_blank"
+          rel="noreferrer"
+        >
           <GithubIcon width="28px" height="28px" />
         </a>
       </div>
