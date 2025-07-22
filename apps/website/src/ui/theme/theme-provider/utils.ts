@@ -34,15 +34,17 @@ function getPrefersTheme(theme: Theme | null): Theme {
 function setPrefersTheme(theme: Theme | null): Theme {
   const prefers = getPrefersTheme(theme)
   if (typeof document !== 'undefined') {
-    const head = document.documentElement
-    head.classList.toggle('dark', prefers === 'dark')
-    head.classList.toggle('light', prefers === 'light')
+    const root = document.documentElement
+    root.classList.toggle('dark', prefers === 'dark')
+    root.classList.toggle('light', prefers === 'light')
+    // Set colorScheme style property to match theme
+    root.style.colorScheme = prefers
   }
   return prefers
 }
 
 function getPrefersColorScheme(theme: Theme | null): 'light dark' | 'dark light' {
-  let prefers
+  let prefers: Theme
   if (theme != null) {
     prefers = theme
   } else {
@@ -52,7 +54,7 @@ function getPrefersColorScheme(theme: Theme | null): 'light dark' | 'dark light'
 }
 
 function setPrefersColorScheme(theme: Theme | null): void {
-  let prefers
+  let prefers: Theme
   if (theme != null) {
     prefers = theme
   } else {
