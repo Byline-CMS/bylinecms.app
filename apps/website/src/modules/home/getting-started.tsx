@@ -6,7 +6,7 @@ export function GettingStarted() {
       <Container>
         <div className="max-w-[1224px] space-y-8 py-20 container rounded-lg mx-auto px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-900 dark:to-purple-700">
           <div className="space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white text-balance">
               We're Just Getting Started
             </h2>
             <p className="text-xl text-purple-100">
