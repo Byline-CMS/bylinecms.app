@@ -23,11 +23,11 @@ import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { BreadcrumbsProvider } from '@/context/breadcrumbs/breadcrumbs-provider'
 import { TranslationsProvider } from '@/i18n/client/translation-provider'
+import { GradientBackground } from '@/modules/home/gradient-background'
 import { AppBar } from '@/ui/components/app-bar.tsx'
 import { SiteFooter } from '@/ui/components/site-footer.tsx'
 import { getTheme } from '@/ui/theme/get-theme'
 import { ThemeProvider } from '@/ui/theme/theme-provider'
-import { GradientBackground } from '@/modules/home/gradient-background'
 
 import '@/ui/styles/global.css'
 
@@ -35,7 +35,7 @@ export const Route = createRootRoute({
   component: () => {
     const theme = getTheme()
     return (
-       <ThemeProvider theme={theme.theme} themeSource={theme.source}>
+      <ThemeProvider theme={theme.theme} themeSource={theme.source}>
         <TranslationsProvider>
           <BreadcrumbsProvider>
             <div className="layout-container flex flex-col w-full max-w-full min-h-screen h-full selection:text-white selection:bg-primary-400">
