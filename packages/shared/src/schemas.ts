@@ -19,7 +19,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import * as z from "zod";
+import { type RefinementCtx, z } from 'zod'
 
 /**
  * integerFromStringSchema
@@ -109,22 +109,27 @@ export const checkBoxAsBooleanSchema = (defaultValue = false) =>
 /**
  * requireIfEnabled
  *
- * @description: Returns a Zod refinement that requires the given properties be defined
+ * @description: Returns a Zod superRefine function that requires the given properties be defined
  * when the 'enabled' property is true.
  * @param properties
  * @param name
  * @returns
  */
-// export const requireIfEnabled = (
-//   properties: string[],
-//   name: string
-// ): [(data: any) => boolean, CustomErrorParams] => [
-//     (data: any) => !data.enabled || properties.every((prop) => data[prop] !== undefined),
-//     {
-//       message: `Each of ${properties.join(' ')} is required when ${name} is enabled.`,
-//       path: properties,
-//     },
-//   ]
+export const requireIfEnabled =
+  (properties: string[], name: string) => (data: any, ctx: RefinementCtx) => {
+    if (data.enabled) {
+      for (const prop of properties) {
+        if (data[prop] === undefined || data[prop] === null || data[prop] === '') {
+          ctx.addIssue({
+            code: 'custom',
+            message: `${prop} is required when ${name} is enabled.`,
+            path: [prop],
+          })
+        }
+      }
+    }
+  }
+
 
 /**
  * passwordSchema
