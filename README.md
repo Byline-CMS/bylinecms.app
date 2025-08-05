@@ -1,37 +1,40 @@
+[![CLA assistant](https://cla-assistant.io/readme/badge/Byline-CMS/bylinecms.dev)](https://cla-assistant.io/Byline-CMS/bylinecms.dev)
+
 # Byline CMS
 
 
 Welcome to Byline CMS. We're new!
 
-We're hoping to build a developer-friendly, customer-friendly, AI-first headless CMS.
+We're hoping to build a developer-friendly, open-source and community-driven AI-first headless CMS.
 
 <img width="734" alt="byline-screeenshot-03" src="https://github.com/user-attachments/assets/c7d6efa1-71bb-4add-b0a2-34611f17be4c" />
 
 <p style="font-size: 0.8rem;"><em>Tiny steps - the Byline prototype.</em></p>
 
-Here's a no-frills FAQ.
+## Mission / Vision
+Our experience working with non-profits and NGOs has shown us the profound value of certain freedoms: the freedom to own, control, and share content that deserves to be seen — freedoms that align perfectly with our vision for an open-source, community-driven platform for content management.
 
 ## FAQ
 
 <details>
 <summary>1. Why are you doing this?</summary>
-The initial maintainers of this project are also users of Payload CMS — which is a great project, with a few caveats and one recent development. One caveat is that as of version 3.0 Payload CMS has become a technically complex project, in particular after its integration with Next.js (we like Next.js, but are not sure about Payload's integration). More importantly, Payload CMS was just acquired by Figma. And so we felt there would be no harm (and maybe even some fun) in exploring an alternative while we try to understand more about what this means for the future of Payload.
+Our mission statement pretty much sums up the 'why', but we also think there's a need. We're convinced that the three pillars of content management: 1) Workflow (draft, needs review, published, archived, etc.), 2) Versioning / history, and 3) Content language translation, are not mutually exclusive and that we can build a core framework that offers a foundation for all three without compromise. A 'headless' and 'structured content' architecture will also give developers (and ultimately users) the freedom to choose a framework or implementation approach that best suits their needs.
 </details>
 
 <details>
 <summary>2. Who are you?</summary>
-We’re pretty much nobody — at least not within the usual spheres of influence. We're a couple of developers at an agency based in Southeast Asia, and we're fairly certain you've never heard of us. That said, we have over a decade of experience building content solutions for clients — and we’re tired of fighting frameworks for core features our clients need and expect.
+We’re pretty much nobody — at least not within the usual spheres of influence. We're a couple of developers at an agency based in Southeast Asia, and we're fairly certain you've never heard of us. That said, we have a lot of experience building content solutions for clients — and we’re tired of fighting frameworks for core features our clients need and expect.
 </details>
 
 <details>
 <summary>3. Will this work?</summary>
-We have no idea.
+Obviously we hope so - but at this early stage, we have no idea.
 </details>
 
 
 <details>
 <summary>4. What governance structures are you considering? </summary> 
-We really like the governance structure of the [Fastify project](https://github.com/fastify/.github/blob/main/GOVERNANCE.md). We're going to look for advice over the coming days and weeks and try to find a governance structure that reflects our hopes and values.
+We really like the governance structure of [Penpot](https://community.penpot.app/t/penpots-upcoming-business-model-for-2025/7328), [Zulip](https://zulip.com/) and [Fastify](https://github.com/fastify/.github/blob/main/GOVERNANCE.md). We're committed to 100% open-source software, with no "open core" or 'freemium' gotchas.
 </details>
 
 <details>
@@ -41,17 +44,17 @@ Yes!
 
 <details>
 <summary>6. Would you accept venture or seed-round investment?</summary>
-Probably not — at least not at this stage. We still have a lot to figure out. What we do feel strongly about, however, is that community contributions should remain within the community — and not locked behind an 'enterprise' or paywalled solution.
+We're not sure yet, and likely not at this early stage. We still have a lot to figure out. What we do feel strongly about, however, is that community contributions should remain within the community and not locked behind an 'enterprise' or paywalled solution.
 </details>
 
 <details>
 <summary>7. What's here now?</summary>
-Not much: The embryo of a 'proof of concept' CMS - but there will be more soon.
+We're working on a prototype as a 'proof of concept' for our design goals. It runs, and you're more than welcome to follow along, but it will almost certain change significantly over time.
 </details>
 
 <details>
-<summary>8. Will you fork Payload CMS?</summary>
-Absolutely not. There would be no point in taking on the complexity of Payload when it's the complexity of the project itself we'd like to avoid. 
+<summary>8. Will you fork Payload CMS? </summary>
+Absolutely not. The initial maintainers of this project were also Payload CMS users. Payload is a great CMS, with a couple of caveats and one recent event. The main caveat is Payload's tight integration with Next.js and resulting complexity, and so there would be no point in taking on the complexity of Payload when it's the complexity of the project itself we'd like to avoid. The 'event' is Payload's recent acquisition by Figma. We're not 100% sure yet what this means for the future of Payload, and so we felt there would be no harm (and maybe even some fun) in considering an alternative.
 </details>
 
 <details>
@@ -68,7 +71,7 @@ While we're still finding our feet in terms of overall strategy, we felt it woul
 
 4. We plan to support separate localization for the default admin dashboard interface and for content. In our past work, we’ve often built solutions where content is available in multiple languages, while the admin dashboard remains in just one or two locales. More importantly, changing a content field from non-localized to localized should not require a document collection migration.
 
-5. We’re making it easy to create alternative collection list views — whether for regular collections or media. You’ll also be able to reduce the selected fields for any list view, so there’s no need to retrieve full collection documents just to render a paginated list in the admin dashboard.
+5. We’ll make it easy to create alternative collection list views — whether for regular collections or media. You’ll also be able to reduce the selected fields for any list view, so there’s no need to retrieve full collection documents just to render a paginated list in the admin dashboard.
 
 6. We're going to enable parent / child document relationships by default — ideal for creating documentation sites, or sub-areas in a site where navigation components can be built from child documents.
 
@@ -83,7 +86,7 @@ While we're still finding our feet in terms of overall strategy, we felt it woul
 8. And more....
 
 ## What's Next?
-We need to find our feet, choose license, publish a roadmap, code of conduct, our values and mission statement, as well as settle on a governance model and likely stewardship entity. We've published the prototype under the [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html) license - for now, as we understand this has implications. Before we accept contributions, we'll likely switch to a more permissive license like Apache 2.0 (this requires consent or a CLA from contributors, which is fine while there's just a few of us).
+We need to find our feet, choose a license, publish a roadmap, code of conduct, as well as settle on a governance model and likely stewardship entity. We've published the prototype under the [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html) license - for now, as we understand this has implications. Before we accept contributions, we'll revisit licensing, looking closely at the [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/), or possibly even a more permissive license like Apache 2.0. Changing the project's license will require consent or a CLA from contributors, which is fine while there's just a few of us.
 
 ## What is there to do?
 
@@ -119,8 +122,6 @@ Plus lots more... whew!
 
 Visit https://github.com/Byline-CMS/bylinecms.dev for instructions on getting started.
 
-Enjoy and stay tuned!
-
 ## License
 
 Byline CMS is free software licensed under the GNU Affero General Public License v3.0 or later.
@@ -130,5 +131,5 @@ Copyright © 2025 Anthony Bouch and contributors.
 
 ### Major Contributors
 
-* Anthony Bouch
-* David Lipsky
+* Anthony Bouch https://www.linkedin.com/in/anthonybouch/ 
+* David Lipsky https://www.linkedin.com/in/david-lipsky-4391862a8/
