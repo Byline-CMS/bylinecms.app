@@ -12,7 +12,7 @@ We're hoping to build a developer-friendly, open-source and community-driven AI-
 <p style="font-size: 0.8rem;"><em>Tiny steps - the Byline prototype.</em></p>
 
 ## Mission / Vision
-Our experience working with non-profits and NGOs has shown us the profound value of certain freedoms: the freedom to own, control, and share content that deserves to be seen — freedoms that align perfectly with our vision for an open-source, community-driven platform for content management.
+The developers of Byline CMS have worked extensively with non-profits and NGOs, and this work has shown us the profound value of certain freedoms: the freedom to own, control, and share content that deserves to be seen — freedoms that align perfectly with our vision for an open-source, community-driven platform for content management.
 
 ## FAQ
 
@@ -28,7 +28,7 @@ We’re pretty much nobody — at least not within the usual spheres of influenc
 
 <details>
 <summary>3. Will this work?</summary>
-Obviously we hope so - but at this early stage, we have no idea.
+We hope so - but at this early stage, we have no idea.
 </details>
 
 
@@ -44,7 +44,7 @@ Yes!
 
 <details>
 <summary>6. Would you accept venture or seed-round investment?</summary>
-We're not sure yet, and likely not at this early stage. We still have a lot to figure out. What we do feel strongly about, however, is that community contributions should remain within the community and not locked behind an 'enterprise' or paywalled solution.
+We’re not certain yet, and likely not at this early stage. Our priority is to figure out key aspects of the project first. What we feel strongly about, however, is that community contributions should remain accessible — not locked behind an “enterprise” or paywalled solution. Ultimately, our governance structure and commitment to being community‑driven will guide any financial decisions we make.
 </details>
 
 <details>
@@ -54,7 +54,7 @@ We're working on a prototype as a 'proof of concept' for our design goals. It ru
 
 <details>
 <summary>8. Will you fork Payload CMS? </summary>
-Absolutely not. The initial maintainers of this project were also Payload CMS users. Payload is a great CMS, with a couple of caveats and one recent event. The main caveat is Payload's tight integration with Next.js and resulting complexity, and so there would be no point in taking on the complexity of Payload when it's the complexity of the project itself we'd like to avoid. The 'event' is Payload's recent acquisition by Figma. We're not 100% sure yet what this means for the future of Payload, and so we felt there would be no harm (and maybe even some fun) in considering an alternative.
+Absolutely not. The initial maintainers of this project were also Payload CMS users. Payload is a great CMS, with a couple of caveats and one recent event. The main caveat is Payload's tight integration with Next.js and resulting complexity, and so there would be no point in taking on the complexity of Payload when it's the complexity of the project itself we'd like to avoid. The 'event' is Payload's recent acquisition by Figma. We're not sure yet what this means for the future of Payload, and so we felt there would be no harm (and maybe even some fun) in considering an alternative.
 </details>
 
 <details>
@@ -77,7 +77,7 @@ While we're still finding our feet in terms of overall strategy, we felt it woul
 
 7. We're going to create a native 'file' field type that can be used in any collection definition, and separately from any defined media or upload collections (think Drupal files).
 
-8. We'd like everything to be fast - like really fast - from admin bundle compile times to API responses.
+8. We'd like everything to be fast — like really fast — from admin bundle compile times to API responses.
    
 9. While we’ll be focused on a small, opinionated core, we’re thinking big — offering enterprise-grade features like built-in content versioning (as described above), along with callbacks and webhooks support for consumer cache invalidation strategies (to name just a few).
 
@@ -86,7 +86,7 @@ While we're still finding our feet in terms of overall strategy, we felt it woul
 8. And more....
 
 ## What's Next?
-We need to find our feet, choose a license, publish a roadmap, code of conduct, as well as settle on a governance model and likely stewardship entity. We've published the prototype under the [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html) license - for now, as we understand this has implications. Before we accept contributions, we'll revisit licensing, looking closely at the [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/), or possibly even a more permissive license like Apache 2.0. Changing the project's license will require consent or a CLA from contributors, which is fine while there's just a few of us.
+We need to find our feet, choose a license, publish a roadmap, code of conduct, as well as settle on a governance model and likely stewardship entity. We've published the prototype under the [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html) license — for now, as we understand this has implications. Before we accept contributions, we'll revisit licensing, looking closely at the [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/), or possibly even a more permissive license like Apache 2.0. Changing the project's license will require consent or a CLA from contributors, which is fine while there's just a few of us.
 
 ## What is there to do?
 
