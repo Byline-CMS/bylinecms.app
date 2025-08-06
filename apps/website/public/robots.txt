@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://bylinecms.app/sitemap.xml
+
 User-agent: facebookexternalhit
 Allow: /
 
