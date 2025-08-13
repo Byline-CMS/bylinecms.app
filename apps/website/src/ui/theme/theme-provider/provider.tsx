@@ -2,8 +2,10 @@
 
 import type { ReactNode } from 'react'
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { getTheme as getThemeApi, type ThemeSettings } from '../get-theme.ts'
 import { setTheme as setThemeApi } from '../set-theme.ts'
 import {
+  DEFAULT_THEME,
   PREFERS_DARK_MQ,
   setPrefersColorScheme,
   setPrefersTheme,
@@ -13,26 +15,19 @@ import {
 
 // ThemeContext
 interface ThemeContextType {
-  theme: Theme | null
+  theme: Theme | undefined
   setTheme: (theme: Theme) => void
+  getTheme: () => Theme
 }
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 interface ThemeProviderProps {
   children: ReactNode
-  theme: Theme
-  themeSource?: ThemeSource
 }
 
 // ThemeProvider
-function ThemeProvider({
-  children,
-  theme,
-  themeSource = ThemeSource.DEFAULT,
-}: ThemeProviderProps): React.JSX.Element {
-  const [themeInState, setThemeInState] = useState<Theme>(theme)
-  // const initialState: SetThemeActionState = { message: undefined, status: 'idle' }
-  // const [state, action, pending] = useActionState(setThemeAction, initialState)
+function ThemeProvider({ children }: ThemeProviderProps): React.JSX.Element {
+  const [themeSettings, setThemeSettings] = useState<ThemeSettings | null>(null)
 
   // This effect will install an event listener to react to browser
   // prefers-color-scheme changes, but only if the current theme is
@@ -46,20 +41,23 @@ function ThemeProvider({
   // prefers-color-scheme at all, so we shouldn't update the theme when
   // it changes).
   useEffect(() => {
-    if (themeSource === ThemeSource.HEADER) {
+    if (themeSettings == null) {
+      const themeSettings = getThemeApi()
+      setThemeSettings(themeSettings)
+    } else if (themeSettings.source === ThemeSource.HEADER) {
       const mediaQuery = window.matchMedia(PREFERS_DARK_MQ)
       const handleChange = (ev: MediaQueryListEvent): void => {
         const prefers = ev.matches ? Theme.DARK : Theme.LIGHT
         setPrefersTheme(prefers)
         setPrefersColorScheme(prefers)
-        setThemeInState(prefers)
+        setThemeSettings({ ...themeSettings, theme: prefers })
       }
       mediaQuery.addEventListener('change', handleChange)
       return () => {
         mediaQuery.removeEventListener('change', handleChange)
       }
     }
-  }, [themeSource])
+  }, [themeSettings])
 
   const contextValue = useMemo(() => {
     const setTheme = (prefers: Theme): void => {
@@ -73,10 +71,15 @@ function ThemeProvider({
       setPrefersTheme(prefers)
       setPrefersColorScheme(prefers)
       // Then trigger the state change
-      setThemeInState(prefers)
+      setThemeSettings({ theme: prefers, source: ThemeSource.STORED })
     }
-    return { theme: themeInState, setTheme }
-  }, [themeInState])
+
+    const getTheme = (): Theme => {
+      return themeSettings?.theme ?? DEFAULT_THEME
+    }
+
+    return { theme: themeSettings?.theme, setTheme, getTheme }
+  }, [themeSettings])
 
   return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>
 }

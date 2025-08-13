@@ -4,7 +4,8 @@ import { LightIcon, MoonIcon } from '@byline/uikit/react'
 import cx from 'classnames'
 import React from 'react'
 
-import { Theme, useTheme } from '@/ui/theme/theme-provider'
+import { useTheme } from '@/ui/theme/theme-provider/provider'
+import { Theme } from '@/ui/theme/theme-provider/utils'
 
 type ThemeSwitchIntrinsicProps = React.JSX.IntrinsicElements['div']
 interface ThemeSwitchProps extends ThemeSwitchIntrinsicProps {

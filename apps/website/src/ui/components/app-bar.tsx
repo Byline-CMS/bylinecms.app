@@ -7,7 +7,7 @@ import cx from 'classnames'
 import { forwardRef, useEffect, useState } from 'react'
 import type { Locale } from '@/i18n/i18n-config'
 import { Branding } from '@/modules/home/branding'
-import { ThemeSwitch } from '@/ui/theme/theme-provider'
+import { ThemeSwitch } from '@/ui/theme/theme-provider/switch'
 
 interface AppBarProps {
   className?: string
