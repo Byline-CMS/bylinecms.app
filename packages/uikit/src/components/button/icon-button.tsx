@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -23,10 +24,10 @@
 import type React from 'react'
 
 import cx from 'classnames'
-import { Button } from './button'
-import type { ButtonProps } from './button.js'
 
+import { Button } from './button'
 import styles from './button.module.css'
+import type { ButtonProps } from './button.js'
 
 type IconButtonProps<C extends React.ElementType = 'button'> = ButtonProps<C> & {
   square?: boolean

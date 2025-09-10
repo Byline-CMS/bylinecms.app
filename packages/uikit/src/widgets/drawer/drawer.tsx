@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -20,27 +21,23 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import type React from 'react'
+import type { ReactNode } from 'react'
+import { useEffect } from 'react'
 
 import cx from 'classnames'
-
 import { AnimatePresence, type FeatureBundle, LazyMotion } from 'motion/react'
-import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
+
 import { Overlay } from '../../components/overlay'
 import { useMediaQuery } from '../../hooks/use-media-query'
 import { getPortalRoot } from '../../utils/getPortalRoot'
-import { useDrawer } from './drawer-context'
-
+import styles from './drawer.module.css'
 import { DrawerContainer } from './drawer-container'
 import { DrawerContent } from './drawer-content'
+import { useDrawer } from './drawer-context'
 import { DrawerHeader } from './drawer-header'
 import { DrawerTopActions } from './drawer-top-actions'
 import { DrawerWrapper } from './drawer-wrapper'
-
-import type { ReactNode } from 'react'
-
-import styles from './drawer.module.css'
 
 type Styles = {
   [key: string]: string

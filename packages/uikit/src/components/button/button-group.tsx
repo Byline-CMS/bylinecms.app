@@ -21,15 +21,14 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { ToggleGroup as ToggleGroupPrimitive } from 'radix-ui'
-import React, { type Ref, type ComponentPropsWithoutRef, useState } from 'react'
+import React, { type ComponentPropsWithoutRef, type Ref } from 'react'
 
 import cx from 'classnames'
+import { ToggleGroup as ToggleGroupPrimitive } from 'radix-ui'
 
-import type { EnableRipple, Intent, Size, Variant } from './@types/button'
 import { Button } from './button'
-
 import styles from './button-group.module.css'
+import type { EnableRipple, Intent, Size, Variant } from './@types/button'
 
 interface ButtonGroupContextType {
   variant?: Variant

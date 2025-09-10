@@ -21,16 +21,16 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import cx from 'classnames'
 import type React from 'react'
 
-import type { Intent, Size, Variant } from './@types/input.js'
+import cx from 'classnames'
+
 import { ErrorText } from './error-text.js'
 import { HelpText } from './help-text.js'
 import styles from './input.module.css'
-
-import type { InputAdornmentProps } from './input-adornment.js'
 import { Label } from './label.js'
+import type { Intent, Size, Variant } from './@types/input.js'
+import type { InputAdornmentProps } from './input-adornment.js'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string
@@ -53,7 +53,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   ref?: React.RefCallback<HTMLInputElement | null> | React.RefObject<HTMLInputElement | null>
 }
 
-export const Input = <C extends React.ElementType = 'input'>({
+export const Input = <_C extends React.ElementType = 'input'>({
   ref,
   id,
   name,

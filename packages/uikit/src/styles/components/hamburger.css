@@ -1,4 +1,8 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
   .component--hamburger {
@@ -29,7 +33,7 @@
 
   .component--hamburger:active,
   .component--hamburger:focus {
-    outline: none !important;
+    outline: none;
     border-color: white;
     border-width: 0.5px;
     border-style: dashed;
@@ -79,12 +83,16 @@
 
   .component--hamburger .inner::before {
     top: -8px;
-    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+    transition:
+      top 0.075s 0.12s ease,
+      opacity 0.075s ease;
   }
 
   .component--hamburger .inner::after {
     bottom: -8px;
-    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition:
+      bottom 0.075s 0.12s ease,
+      transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 
   .component--hamburger.is_active .inner {
@@ -96,12 +104,16 @@
   .component--hamburger.is_active .inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+    transition:
+      top 0.075s ease,
+      opacity 0.075s 0.12s ease;
   }
 
   .component--hamburger.is_active .inner::after {
     bottom: 0;
     transform: rotate(-90deg);
-    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition:
+      bottom 0.075s ease,
+      transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 }

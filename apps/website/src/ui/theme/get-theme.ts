@@ -1,5 +1,4 @@
 import { DEFAULT_THEME, Theme, ThemeSource } from '@/ui/theme/theme-provider/utils.ts'
-
 import { PREFERS_DARK_MQ } from './theme-provider/utils.ts'
 
 export interface ThemeSettings {
@@ -7,8 +6,7 @@ export interface ThemeSettings {
   source: ThemeSource
 }
 
-export function getTheme(
-): ThemeSettings {
+export function getTheme(): ThemeSettings {
   const localStorageTheme = localStorage.getItem('theme')
   if (localStorageTheme != null) {
     return {
@@ -17,7 +15,7 @@ export function getTheme(
     }
   }
 
-  const darkThemeMq = window.matchMedia(PREFERS_DARK_MQ);
+  const darkThemeMq = window.matchMedia(PREFERS_DARK_MQ)
   if (darkThemeMq.matches) {
     return {
       theme: Theme.DARK,

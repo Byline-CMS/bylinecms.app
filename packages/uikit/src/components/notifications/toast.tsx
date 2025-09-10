@@ -21,23 +21,19 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { useFocusTrap, useMergedRef } from '@mantine/hooks'
-import cx from 'classnames'
 import React from 'react'
 
+import { useFocusTrap, useMergedRef } from '@mantine/hooks'
+import cx from 'classnames'
 import { Toast as ToastPrimitive } from 'radix-ui'
 
+import { CloseIcon } from '../../icons/close-icon'
 import { DangerIcon } from '../../icons/danger-icon'
 import { InfoIcon } from '../../icons/info-icon'
-import { PrimaryIcon } from '../../icons/primary-icon'
 import { SuccessIcon } from '../../icons/success-icon'
 import { WarningIcon } from '../../icons/warning-icon'
-
 import { Button } from '../button/button.js'
-
 import styles from './toast.module.css'
-
-import { CloseIcon } from '../../icons/close-icon'
 import type { IconType, Intent, OnOpenChange, Position } from './@types/toast.js'
 
 const toastIcons = {
@@ -90,7 +86,7 @@ export const Toast = function Toast({
     if (onOpenChange != null) onOpenChange(false)
   }
 
-  const handleOnChange = (open: boolean): void => {
+  const _handleOnChange = (open: boolean): void => {
     console.log('handleOnChange', { open })
     if (open) {
       timerRef.current = window.setTimeout(() => {

@@ -20,7 +20,7 @@
 .component--theme-switch:active,
 .component--theme-switch:focus {
   border: 1px #222222 solid;
-  outline: none !important;
+  outline: none;
   border-style: solid;
   border-width: 1.5px;
   border-radius: 4px;

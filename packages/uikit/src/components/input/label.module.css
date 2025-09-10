@@ -1,10 +1,14 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
   .label {
     display: block;
     font-weight: 500;
-    color: var(--gray-900)
+    color: var(--gray-900);
   }
 
   .required {

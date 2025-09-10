@@ -50,7 +50,8 @@
     -o-tab-size: 4;
     tab-size: 4;
     /* 3 */
-    font-family: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    font-family:
+      Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol", "Noto Color Emoji";
     /* 4 */
     font-feature-settings: normal;
@@ -140,8 +141,9 @@ Add the correct font weight in Edge and Safari.
   kbd,
   samp,
   pre {
-    font-family: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-      "Liberation Mono", "Courier New", monospace;
+    font-family:
+      "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
     /* 1 */
     font-feature-settings: normal;
     /* 2 */
@@ -455,10 +457,10 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     *,
     *::before,
     *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
+      animation-duration: 0.01ms;
+      animation-iteration-count: 1;
+      transition-duration: 0.01ms;
+      scroll-behavior: auto;
     }
   }
 }

@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -28,19 +29,16 @@ import React, { useContext } from 'react'
 
 import cx from 'classnames'
 
-import { usePagination } from './hooks/usePagination'
-
 import { Ellipses } from './ellipses.js'
 import { FirstButton } from './first-button'
+import { usePagination } from './hooks/usePagination'
 import { LastButton } from './last-button'
 import { NextButton } from './next-button'
 import { NumberButton } from './number-button'
+import styles from './pagination.module.css'
 import { PreviousButton } from './previous-button'
-
 import type { Variant } from './@types'
 import type { UsePaginationItem, UsePaginationProps } from './hooks/types/usePagination'
-
-import styles from './pagination.module.css'
 
 const PAGINATION_NAME = 'Pagination'
 const ROOT_NAME = 'Root'

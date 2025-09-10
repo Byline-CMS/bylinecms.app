@@ -1,4 +1,8 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
   .button {
@@ -14,7 +18,9 @@
     justify-content: center;
     outline: 2px solid transparent;
     outline-offset: 2px;
-    transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+    transition:
+      background-color var(--transition-normal),
+      box-shadow var(--transition-normal);
     border-radius: var(--border-radius-sm);
   }
 
@@ -118,9 +124,11 @@
 
   .gradient {
     color: var(--button-variant-gradient-foreground);
-    background: linear-gradient(45deg,
-        var(--button-variant-gradient-start),
-        var(--button-variant-gradient-end));
+    background: linear-gradient(
+      45deg,
+      var(--button-variant-gradient-start),
+      var(--button-variant-gradient-end)
+    );
   }
 
   .gradient:disabled,
@@ -132,9 +140,11 @@
 
   .gradient:hover {
     color: var(--button-variant-gradient-foreground);
-    background: linear-gradient(45deg,
-        var(--button-variant-gradient-start),
-        var(--button-variant-gradient-end));
+    background: linear-gradient(
+      45deg,
+      var(--button-variant-gradient-start),
+      var(--button-variant-gradient-end)
+    );
   }
 
   .gradient:focus,
@@ -391,7 +401,6 @@
   * a root html class accordingly
   */
   :global(.dark) {
-
     .button:focus:not(:where([class~="not-dark"], [class~="not-dark"] *)),
     .button:active:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
       --ring-offset-color: var(--background);
@@ -521,7 +530,9 @@
     .gradient:disabled:not(:where([class~="not-dark"], [class~="not-dark"] *)),
     .gradient[disabled]:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
       background: unset;
-      background-color: oklch(from var(--button-variant-gradient-end) calc(l * 0.85) calc(c * 0.85) h);
+      background-color: oklch(
+        from var(--button-variant-gradient-end) calc(l * 0.85) calc(c * 0.85) h
+      );
       color: oklch(from var(--button-variant-gradient-foreground) calc(l * 0.85) calc(c * 0.85) h);
     }
 

@@ -1,4 +1,5 @@
 import { Container, Section } from '@byline/uikit/react'
+
 import { WYSIWYGAnimation } from '@/modules/home/wysiwyg-animation'
 
 export function EditorAnimation() {

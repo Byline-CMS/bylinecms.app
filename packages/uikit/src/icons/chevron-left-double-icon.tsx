@@ -19,8 +19,9 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import cx from 'classnames'
 import type React from 'react'
+
+import cx from 'classnames'
 
 import { IconElement } from './icon-element.jsx'
 import styles from './icons.module.css'

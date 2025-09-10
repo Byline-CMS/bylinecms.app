@@ -24,7 +24,6 @@
  * TS / dist output
  */
 export * from './components/@types/shared.js'
-
 export * from './components/accordion/accordion.js'
 export * from './components/animation/fade-in-lift.js'
 export * from './components/avatar/avatar.js'
@@ -106,7 +105,6 @@ export * from './icons/users-icon.js'
 export * from './icons/wallet-icon.js'
 export * from './icons/warning-icon.js'
 export * from './icons/x-icon.js'
-
 export * from './loaders/ellipses.js'
 export * from './loaders/ring.js'
 export * from './loaders/spinner.js'

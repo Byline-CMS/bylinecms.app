@@ -223,18 +223,16 @@ export const Checked = (): React.JSX.Element => {
     setChecked(!checked)
   }
   return (
-    <>
-      <div style={{ maxWidth: '800px', margin: '4rem auto' }}>
-        <Checkbox
-          aria-label="Foo Checkbox"
-          onClick={handleOnClick}
-          checked={checked}
-          id="foo"
-          name="foo"
-          label="Foo Checkbox"
-        />
-      </div>
-    </>
+    <div style={{ maxWidth: '800px', margin: '4rem auto' }}>
+      <Checkbox
+        aria-label="Foo Checkbox"
+        onClick={handleOnClick}
+        checked={checked}
+        id="foo"
+        name="foo"
+        label="Foo Checkbox"
+      />
+    </div>
   )
 }
 
@@ -244,18 +242,16 @@ export const Disabled = (): React.JSX.Element => {
     setChecked(!checked)
   }
   return (
-    <>
-      <div style={{ maxWidth: '800px', margin: '4rem auto' }}>
-        <Checkbox
-          aria-label="Foo Checkbox"
-          onClick={handleOnClick}
-          checked={checked}
-          disabled
-          id="foo"
-          name="foo"
-          label="Foo Checkbox"
-        />
-      </div>
-    </>
+    <div style={{ maxWidth: '800px', margin: '4rem auto' }}>
+      <Checkbox
+        aria-label="Foo Checkbox"
+        onClick={handleOnClick}
+        checked={checked}
+        disabled
+        id="foo"
+        name="foo"
+        label="Foo Checkbox"
+      />
+    </div>
   )
 }

@@ -1,9 +1,13 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
   .text {
     font-size: 0.875rem;
-    color: var(--red-500)
+    color: var(--red-500);
   }
 
   /* 🌙 Dark via `.dark` class. We rely on the 

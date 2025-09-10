@@ -21,8 +21,8 @@
 
 import type { Meta } from '@storybook/react-vite'
 
-import type { RadioGroupValue } from './radio-group.js'
 import { RadioGroup as RadioGroupComponent, RadioGroupItem } from './radio-group.js'
+import type { RadioGroupValue } from './radio-group.js'
 
 const meta: Meta = {
   /* 👇 The title prop is optional.

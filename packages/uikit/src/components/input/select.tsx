@@ -21,17 +21,18 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import type React from 'react'
+import type { ComponentPropsWithoutRef } from 'react'
+
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 import cx from 'classnames'
 import { Select as SelectPrimitive } from 'radix-ui'
-import type React from 'react'
-import type { ComponentPropsWithoutRef } from 'react'
-import type { Intent } from '../@types/shared.js'
-import type { Size, Variant } from '../button/@types/button.js'
+
 import { Button } from '../button/button.js'
 import { HelpText } from './help-text.js'
-
 import styles from './select.module.css'
+import type { Intent } from '../@types/shared.js'
+import type { Size, Variant } from '../button/@types/button.js'
 
 export interface SelectValue {
   label: string

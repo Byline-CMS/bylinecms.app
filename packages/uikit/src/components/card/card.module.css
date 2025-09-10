@@ -1,4 +1,8 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
   .card {
@@ -13,7 +17,7 @@
     border-color: var(--border-color);
     border-style: var(--border-style-solid);
     border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm)
+    box-shadow: var(--shadow-sm);
   }
 
   .card:is(:global(.dark) *) {

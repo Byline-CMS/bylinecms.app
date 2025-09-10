@@ -21,8 +21,6 @@
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import cx from 'classnames'
-
 import { SignOutIcon } from '../../icons/sign-out-icon.js'
 import { UserIcon } from '../../icons/user-icon.js'
 import { Button } from '../button/button.js'

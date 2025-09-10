@@ -25,7 +25,6 @@ import React from 'react'
 import { Button } from '../../components/button/button.js'
 import { IconButton } from '../../components/button/icon-button.js'
 import { CloseIcon } from '../../icons/close-icon.js'
-
 import { Drawer } from './drawer.js'
 
 export default {
@@ -197,46 +196,44 @@ export const Nested = (): React.JSX.Element => {
             <h2>Drawer 1</h2>
           </Drawer.Header>
           <Drawer.Content>
-            <>
-              <p>Drawer 1 actions here...</p>
-              <Button
-                onClick={() => {
-                  setIsOpen2(true)
-                }}
-              >
-                Open Drawer 2
-              </Button>
-              <Drawer
-                id="second-drawer"
-                width="medium"
-                closeOnOverlayClick={true}
-                isOpen={isOpen2}
-                onDismiss={() => setIsOpen2(false)}
-              >
-                <Drawer.Container aria-hidden={!isOpen2}>
-                  <Drawer.TopActions>
-                    <button type="button" tabIndex={0} className="sr-only">
-                      no action
-                    </button>
-                    <IconButton
-                      arial-label="Close"
-                      size="xs"
-                      onClick={() => {
-                        setIsOpen2(false)
-                      }}
-                    >
-                      <CloseIcon width="14px" height="14px" svgClassName="white-icon" />
-                    </IconButton>
-                  </Drawer.TopActions>
-                  <Drawer.Header className="flex items-center justify-between mb-4">
-                    <h2>Drawer 2</h2>
-                  </Drawer.Header>
-                  <Drawer.Content>
-                    <p>Drawer content here...</p>
-                  </Drawer.Content>
-                </Drawer.Container>
-              </Drawer>
-            </>
+            <p>Drawer 1 actions here...</p>
+            <Button
+              onClick={() => {
+                setIsOpen2(true)
+              }}
+            >
+              Open Drawer 2
+            </Button>
+            <Drawer
+              id="second-drawer"
+              width="medium"
+              closeOnOverlayClick={true}
+              isOpen={isOpen2}
+              onDismiss={() => setIsOpen2(false)}
+            >
+              <Drawer.Container aria-hidden={!isOpen2}>
+                <Drawer.TopActions>
+                  <button type="button" tabIndex={0} className="sr-only">
+                    no action
+                  </button>
+                  <IconButton
+                    arial-label="Close"
+                    size="xs"
+                    onClick={() => {
+                      setIsOpen2(false)
+                    }}
+                  >
+                    <CloseIcon width="14px" height="14px" svgClassName="white-icon" />
+                  </IconButton>
+                </Drawer.TopActions>
+                <Drawer.Header className="flex items-center justify-between mb-4">
+                  <h2>Drawer 2</h2>
+                </Drawer.Header>
+                <Drawer.Content>
+                  <p>Drawer content here...</p>
+                </Drawer.Content>
+              </Drawer.Container>
+            </Drawer>
           </Drawer.Content>
         </Drawer.Container>
       </Drawer>

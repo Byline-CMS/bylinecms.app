@@ -22,10 +22,9 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react'
 
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import type { Meta } from '@storybook/react-vite'
 
 import { Button } from '../button/button.js'
-
 import { Toast as ToastComponent } from './toast.js'
 
 export const Toast = (): React.JSX.Element => {
@@ -36,20 +35,18 @@ export const Toast = (): React.JSX.Element => {
   }
 
   return (
-    <>
-      <div className="mb-6 max-w-[600px]">
-        <Button onClick={handleOpenToastClick}>Open Toast</Button>
-        <ToastComponent
-          title="Note"
-          iconType="success"
-          intent="success"
-          position="bottom-right"
-          message="This is a test Toast modal that should appear when the button is clicked."
-          open={toast}
-          onOpenChange={setToast}
-        />
-      </div>
-    </>
+    <div className="mb-6 max-w-[600px]">
+      <Button onClick={handleOpenToastClick}>Open Toast</Button>
+      <ToastComponent
+        title="Note"
+        iconType="success"
+        intent="success"
+        position="bottom-right"
+        message="This is a test Toast modal that should appear when the button is clicked."
+        open={toast}
+        onOpenChange={setToast}
+      />
+    </div>
   )
 }
 

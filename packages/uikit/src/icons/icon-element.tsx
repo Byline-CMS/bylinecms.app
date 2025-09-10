@@ -19,8 +19,8 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import type { ReactNode } from 'react'
 import type React from 'react'
+import type { ReactNode } from 'react'
 
 import cx from 'classnames'
 

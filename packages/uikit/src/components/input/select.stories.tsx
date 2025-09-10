@@ -40,16 +40,14 @@ const values: SelectValue[] = [
 
 export const Default = (): React.JSX.Element => {
   return (
-    <>
-      <div style={{ maxWidth: '600px', margin: '2rem auto' }}>
-        <Select placeholder="Select one..." helpText="Select an item.">
-          {values.map((value) => (
-            <SelectItem key={value.value} value={value.value}>
-              {value.label}
-            </SelectItem>
-          ))}
-        </Select>
-      </div>
-    </>
+    <div style={{ maxWidth: '600px', margin: '2rem auto' }}>
+      <Select placeholder="Select one..." helpText="Select an item.">
+        {values.map((value) => (
+          <SelectItem key={value.value} value={value.value}>
+            {value.label}
+          </SelectItem>
+        ))}
+      </Select>
+    </div>
   )
 }

@@ -22,9 +22,9 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type React from 'react'
 
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import { UserIcon } from '../../icons/user-icon.js'
+import type { Meta } from '@storybook/react-vite'
 
+import { UserIcon } from '../../icons/user-icon.js'
 import { size } from '../@types/shared.js'
 import { variant } from './@types/button.js'
 import { IconButton } from './icon-button.js'
@@ -48,109 +48,105 @@ const getUserIconSize = (size: string) => {
 
 export const IconButtonsRound = (): React.JSX.Element => {
   return (
-    <>
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        {variant.map((variant: any) => {
-          return (
+    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      {variant.map((variant: any) => {
+        return (
+          <div
+            key={variant}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+              gap: '32px',
+              marginBottom: '32px',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {size.map((size: any) => {
+              const iconSize = getUserIconSize(size)
+              return (
+                <div
+                  key={`${variant}=${size}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <IconButton size={size} variant={variant}>
+                    <UserIcon width={iconSize.width} height={iconSize.height} />
+                  </IconButton>
+                </div>
+              )
+            })}
             <div
-              key={variant}
+              key={`${variant}=${size}`}
               style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-                gap: '32px',
-                marginBottom: '32px',
+                display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
             >
-              {size.map((size: any) => {
-                const iconSize = getUserIconSize(size)
-                return (
-                  <div
-                    key={`${variant}=${size}`}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <IconButton size={size} variant={variant}>
-                      <UserIcon width={iconSize.width} height={iconSize.height} />
-                    </IconButton>
-                  </div>
-                )
-              })}
-              <div
-                key={`${variant}=${size}`}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <IconButton disabled variant={variant}>
-                  <UserIcon width="22px" height="22px" />
-                </IconButton>
-              </div>
+              <IconButton disabled variant={variant}>
+                <UserIcon width="22px" height="22px" />
+              </IconButton>
             </div>
-          )
-        })}
-      </div>
-    </>
+          </div>
+        )
+      })}
+    </div>
   )
 }
 
 export const IconButtonsSquare = (): React.JSX.Element => {
   return (
-    <>
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        {variant.map((variant: any) => {
-          return (
+    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      {variant.map((variant: any) => {
+        return (
+          <div
+            key={variant}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+              gap: '32px',
+              marginBottom: '32px',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {size.map((size: any) => {
+              const iconSize = getUserIconSize(size)
+              return (
+                <div
+                  key={`${variant}=${size}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <IconButton size={size} square={true} variant={variant}>
+                    <UserIcon width={iconSize.width} height={iconSize.height} />
+                  </IconButton>
+                </div>
+              )
+            })}
             <div
-              key={variant}
+              key={`${variant}=${size}`}
               style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-                gap: '32px',
-                marginBottom: '32px',
+                display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
             >
-              {size.map((size: any) => {
-                const iconSize = getUserIconSize(size)
-                return (
-                  <div
-                    key={`${variant}=${size}`}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <IconButton size={size} square={true} variant={variant}>
-                      <UserIcon width={iconSize.width} height={iconSize.height} />
-                    </IconButton>
-                  </div>
-                )
-              })}
-              <div
-                key={`${variant}=${size}`}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <IconButton disabled square={true} variant={variant}>
-                  <UserIcon width="22px" height="22px" />
-                </IconButton>
-              </div>
+              <IconButton disabled square={true} variant={variant}>
+                <UserIcon width="22px" height="22px" />
+              </IconButton>
             </div>
-          )
-        })}
-      </div>
-    </>
+          </div>
+        )
+      })}
+    </div>
   )
 }
 

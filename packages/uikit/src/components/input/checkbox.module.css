@@ -1,4 +1,8 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
   .container {
@@ -64,8 +68,8 @@
     color: var(--label-color);
   }
 
-  .checkbox:disabled~.label,
-  .checkbox[disabled]~.label {
+  .checkbox:disabled ~ .label,
+  .checkbox[disabled] ~ .label {
     pointer-events: none;
   }
 
@@ -170,7 +174,6 @@
   * a root html class accordingly
   */
   :global(.dark) {
-
     /* Intents */
     .primary:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
       --checkbox-variant-outlined-border: var(--primary-300);

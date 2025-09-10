@@ -1,8 +1,11 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 /* 'border-collapse w-full text-sm text-left text-gray-700 dark:text-gray-400 m-0', */
 @layer infonomic-components {
-
   .column {
     display: flex;
     flex-direction: column;
@@ -83,9 +86,8 @@
 
   .row .label {
     padding-left: 0;
-    padding-right: var(--spacing-4)
+    padding-right: var(--spacing-4);
   }
-
 
   /* Intents */
   .primary {
@@ -136,7 +138,6 @@
   * a root html class accordingly
   */
   :global(.dark) {
-
     /* Intents */
     .primary:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
       --radio-border: var(--primary-300);

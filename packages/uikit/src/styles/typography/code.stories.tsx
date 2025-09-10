@@ -20,7 +20,6 @@
  */
 
 import type { Meta } from '@storybook/react-vite'
-
 import { Highlight, themes } from 'prism-react-renderer'
 
 const code = `const x = 'foo';
@@ -63,25 +62,23 @@ function CodeDemo({ code, className, language = 'jsx' }: CodeProps): React.JSX.E
 
 export const Code = (): React.JSX.Element => {
   return (
-    <>
-      <div style={{ marginBottom: '48px' }}>
-        <div style={{ maxWidth: '700px', margin: 'auto' }} className="prose">
-          <h1>Heading 1</h1>
-          <p>
-            This is a <code>inline code here</code> of text that we&apos;ll use for our typography
-            and code storybook page. This is a paragraph of text that we&apos;ll use for our
-            typography and code storybook page. Here is a code block...
-          </p>
-          <CodeDemo code={code} />
-          <p>
-            This is a paragraph of text that we&apos;ll use for our typography storybook page. This
-            is a paragraph of text that we&apos;ll use for our typography storybook page. This is a
-            paragraph of text that we&apos;ll use for our typography storybook page. This is a
-            paragraph of text that we&apos;ll use for our typography storybook page.
-          </p>
-        </div>
+    <div style={{ marginBottom: '48px' }}>
+      <div style={{ maxWidth: '700px', margin: 'auto' }} className="prose">
+        <h1>Heading 1</h1>
+        <p>
+          This is a <code>inline code here</code> of text that we&apos;ll use for our typography and
+          code storybook page. This is a paragraph of text that we&apos;ll use for our typography
+          and code storybook page. Here is a code block...
+        </p>
+        <CodeDemo code={code} />
+        <p>
+          This is a paragraph of text that we&apos;ll use for our typography storybook page. This is
+          a paragraph of text that we&apos;ll use for our typography storybook page. This is a
+          paragraph of text that we&apos;ll use for our typography storybook page. This is a
+          paragraph of text that we&apos;ll use for our typography storybook page.
+        </p>
       </div>
-    </>
+    </div>
   )
 }
 

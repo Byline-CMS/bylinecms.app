@@ -21,6 +21,7 @@
 
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+
 import { BreadcrumbsProvider } from '@/context/breadcrumbs/breadcrumbs-provider'
 import { TranslationsProvider } from '@/i18n/client/translation-provider'
 import { GradientBackground } from '@/modules/home/gradient-background'

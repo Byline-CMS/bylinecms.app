@@ -20,9 +20,10 @@
  */
 
 import { Link } from '@tanstack/react-router'
-import cx from 'classnames'
-import { truncate } from '@/utils/utils.general.ts'
 
+import cx from 'classnames'
+
+import { truncate } from '@/utils/utils.general.ts'
 import type { Breadcrumb } from './@types'
 
 export function Breadcrumbs({

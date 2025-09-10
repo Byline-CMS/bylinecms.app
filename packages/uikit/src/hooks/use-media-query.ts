@@ -19,7 +19,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const useMediaQuery = (query: string): boolean | null => {
   const [matches, setMatches] = useState<boolean | null>(null)

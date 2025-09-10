@@ -1,4 +1,8 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
   .inputWrapper {
@@ -112,7 +116,7 @@
   /* Sizes */
   .underlined.sm {
     padding: 0.25rem 0.1rem;
-    min-height: 26px
+    min-height: 26px;
   }
 
   .underlined.md {
@@ -132,7 +136,6 @@
   .filled {
     background-color: var(--input-variant-filled);
   }
-
 
   /* Error classes last, so that they override all 
     of the above */
@@ -237,7 +240,6 @@
   * a root html class accordingly
   */
   :global(.dark) {
-
     .input:focus:not(:where([class~="not-dark"], [class~="not-dark"] *)),
     .input:active:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
       --ring-offset-color: var(--background);

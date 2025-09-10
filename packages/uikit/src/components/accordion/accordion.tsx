@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -28,9 +29,8 @@
 
 import type React from 'react'
 
-import { Accordion as AccordionPrimitive } from 'radix-ui'
-
 import cx from 'classnames'
+import { Accordion as AccordionPrimitive } from 'radix-ui'
 
 import styles from './accordion.module.css'
 

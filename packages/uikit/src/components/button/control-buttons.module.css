@@ -1,7 +1,6 @@
 @layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-components;
 
 @layer infonomic-components {
-
   .stop-button,
   .play-button,
   .directional-button {

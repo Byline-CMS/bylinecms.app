@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -p tsconfig.json && vite build",
     "preview": "vite preview",
-    "clean": "rimraf node_modules dist build .turbo "
+    "clean": "rimraf node_modules dist build .turbo",
+    "lint": "biome check --write --unsafe --diagnostic-level=error"
   },
   "dependencies": {
     "@byline/shared": "workspace:*",

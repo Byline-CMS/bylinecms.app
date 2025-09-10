@@ -1,8 +1,10 @@
-import { Link } from '@tanstack/react-router'
-import cx from 'classnames'
 import type React from 'react'
-import type { Locale } from '@/i18n/i18n-config'
+import { Link } from '@tanstack/react-router'
+
+import cx from 'classnames'
+
 import Logo from '@/images/byline-logo'
+import type { Locale } from '@/i18n/i18n-config'
 
 export function Branding({
   lng,

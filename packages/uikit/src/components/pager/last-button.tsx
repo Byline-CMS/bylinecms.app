@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -29,10 +30,8 @@ import { Slot } from '@radix-ui/react-slot'
 import cx from 'classnames'
 
 import { usePager } from './pagination'
-
-import type { PagerButtonProps, RefType } from './pagination'
-
 import styles from './pagination.module.css'
+import type { PagerButtonProps, RefType } from './pagination'
 
 export type LastButtonProps = PagerButtonProps & {
   count: number

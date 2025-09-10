@@ -1,13 +1,14 @@
 'use client'
 
-import { Button, GithubIcon } from '@byline/uikit/react'
-import { Link, useNavigate, useRouterState } from '@tanstack/react-router'
-
-import cx from 'classnames'
 import { forwardRef, useEffect, useState } from 'react'
-import type { Locale } from '@/i18n/i18n-config'
+import { useRouterState } from '@tanstack/react-router'
+
+import { GithubIcon } from '@byline/uikit/react'
+import cx from 'classnames'
+
 import { Branding } from '@/modules/home/branding'
 import { ThemeSwitch } from '@/ui/theme/theme-provider/switch'
+import type { Locale } from '@/i18n/i18n-config'
 
 interface AppBarProps {
   className?: string
@@ -23,13 +24,13 @@ export const AppBar = forwardRef<Ref, AppBarProps>(function AppBar(
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [hasScrolled, setHasScrolled] = useState(false)
 
-  const handleToggleMobileMenu = (event: React.MouseEvent<HTMLButtonElement> | null): void => {
+  const _handleToggleMobileMenu = (event: React.MouseEvent<HTMLButtonElement> | null): void => {
     if (event != null) event.stopPropagation()
     // e.preventDefault()
     setMobileMenuOpen(!mobileMenuOpen)
   }
 
-  const handleMobileMenuClose = (): void => {
+  const _handleMobileMenuClose = (): void => {
     setMobileMenuOpen(false)
   }
 
@@ -68,17 +69,17 @@ export const AppBar = forwardRef<Ref, AppBarProps>(function AppBar(
   //     ? 'bg-primary-400 dark:bg-primary-900'
   //     : 'border-b border-gray-800/50 bg-white dark:bg-black/80 backdrop-blur-md'
 
-  const appBarTextColor =
+  const _appBarTextColor =
     hasScrolled || location.pathname.length > 3
       ? 'text-black fill-black dark:text-white dark:fill-white'
       : 'text-black fill-black dark:text-white dark:fill-white'
 
-  const hamburgerColor =
+  const _hamburgerColor =
     hasScrolled || location.pathname.length > 3
       ? 'bg-black before:bg-black after:bg-black dark:bg-white dark:before:bg-white dark:after:bg-white'
       : 'bg-white before:bg-white after:bg-white'
 
-  const hamburgerColorMobileMenuOpen = 'bg-white before:bg-white after:bg-white'
+  const _hamburgerColorMobileMenuOpen = 'bg-white before:bg-white after:bg-white'
 
   return (
     <header

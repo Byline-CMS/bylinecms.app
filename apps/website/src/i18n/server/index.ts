@@ -21,8 +21,10 @@
 
 // https://github.com/vercel/next.js/tree/canary/examples/app-dir-i18n-routing
 import 'server-only'
-import type { Locale } from '@/i18n/i18n-config'
+
 import { IntlMessageFormat } from 'intl-messageformat'
+
+import type { Locale } from '@/i18n/i18n-config'
 
 // We enumerate all translations here for better linting and typescript support
 // We also get the default import for cleaner types

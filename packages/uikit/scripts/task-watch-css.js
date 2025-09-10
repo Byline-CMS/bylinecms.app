@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
 import chokidar from 'chokidar'
 import { bundle } from 'lightningcss'
 
@@ -11,7 +12,6 @@ const __dirname = path.dirname(__filename)
 const srcDir = path.join(__dirname, '..', 'src', 'styles')
 const outputDir = path.join(__dirname, '..', 'dist', 'styles')
 const entryFiles = [path.join(srcDir, 'styles.css'), path.join(srcDir, 'typography.css')]
-
 
 // Function to bundle CSS
 const bundleCSS = () => {

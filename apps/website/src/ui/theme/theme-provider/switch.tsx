@@ -1,8 +1,9 @@
 'use client'
 
+import React from 'react'
+
 import { LightIcon, MoonIcon } from '@byline/uikit/react'
 import cx from 'classnames'
-import React from 'react'
 
 import { useTheme } from '@/ui/theme/theme-provider/provider'
 import { Theme } from '@/ui/theme/theme-provider/utils'

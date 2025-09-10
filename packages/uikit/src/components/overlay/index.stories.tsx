@@ -19,9 +19,6 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from 'react'
-
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Overlay } from './overlay.js'

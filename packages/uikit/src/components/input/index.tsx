@@ -19,11 +19,11 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+export * from './checkbox.js'
+export * from './help-text.js'
 export * from './input.js'
 export * from './input-adornment.js'
 export * from './label.js'
-export * from './help-text.js'
 export * from './select.js'
 export * from './text-area.js'
-export * from './checkbox.js'
 export * from './utils.js'

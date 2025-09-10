@@ -20,7 +20,7 @@
 .component--search-menu:active,
 .component--search-menu:focus {
   @apply border-slate-200;
-  outline: none !important;
+  outline: none;
   border-style: solid;
   border-width: 0.5px;
   border-radius: 4px;

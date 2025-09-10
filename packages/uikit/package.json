@@ -39,7 +39,7 @@
     "build:minify": "lightningcss --minify ./dist/styles/styles.css ./dist/styles/typography.css --output-dir ./dist/styles",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf node_modules dist build types .turbo",
-    "lint": "biome check . --diagnostic-level=warn",
+    "lint": "biome check --write --unsafe --diagnostic-level=error",
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build",
     "test": "vitest"

@@ -22,6 +22,7 @@
  */
 
 import { Link } from '@tanstack/react-router'
+
 import Logo from '@/images/byline-logo'
 
 export function SiteFooter() {

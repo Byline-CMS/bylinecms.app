@@ -21,6 +21,8 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import { Link, useRouterState } from '@tanstack/react-router'
+
 import type { PaginationProps } from '@byline/uikit/react'
 import {
   ChevronLeftDoubleIcon,
@@ -29,8 +31,6 @@ import {
   ChevronRightIcon,
   Pagination,
 } from '@byline/uikit/react'
-
-import { Link, useRouterState } from '@tanstack/react-router'
 
 // import { useSearchParams } from 'next/navigation'
 

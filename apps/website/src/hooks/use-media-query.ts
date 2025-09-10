@@ -39,4 +39,3 @@ export const useMediaQuery = (query: string): boolean | null => {
 
   return matches
 }
-

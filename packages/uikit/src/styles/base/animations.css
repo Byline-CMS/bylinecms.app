@@ -1,5 +1,4 @@
 @layer infonomic-base {
-
   @keyframes enterFromRight {
     from {
       opacity: 0;
@@ -91,7 +90,6 @@
       opacity: 0;
     }
   }
-
 
   @keyframes slideUpAndFade {
     from {

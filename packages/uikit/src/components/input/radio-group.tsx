@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -20,11 +21,13 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import type React from 'react'
+
 import cx from 'classnames'
 import { RadioGroup as RadioGroupPrimitive } from 'radix-ui'
-import type React from 'react'
-import type { Intent } from '../@types/shared'
+
 import styles from './radio-group.module.css'
+import type { Intent } from '../@types/shared'
 
 export interface RadioGroupValue {
   id: string

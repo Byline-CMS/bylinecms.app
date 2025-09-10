@@ -19,7 +19,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-export * from './hooks/usePagination'
-export * from './pagination'
-export * from './icons/index'
 export * from './event-pager'
+export * from './hooks/usePagination'
+export * from './icons/index'
+export * from './pagination'

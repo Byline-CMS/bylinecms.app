@@ -1,5 +1,7 @@
 'use client'
+
 import { useEffect } from 'react'
+
 /**
  * Byline CMS
  *
@@ -21,8 +23,8 @@ import { useEffect } from 'react'
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import type { Breadcrumb } from './@types'
 import { useBreadcrumbs } from './breadcrumbs-provider'
+import type { Breadcrumb } from './@types'
 
 export function BreadcrumbsClient({
   breadcrumbs,

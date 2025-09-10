@@ -20,6 +20,7 @@
  */
 
 import { createFileRoute } from '@tanstack/react-router'
+
 import { EditorAnimation } from '@/modules/home/editor-animation'
 import { FeatureGrid } from '@/modules/home/feature-grid'
 import { GettingStarted } from '@/modules/home/getting-started'

@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -20,11 +21,11 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import cx from 'classnames'
 import type React from 'react'
 
-import styles from './control-buttons.module.css'
+import cx from 'classnames'
 
+import styles from './control-buttons.module.css'
 import type { Size } from './@types/button.js'
 
 type ButtonType = React.JSX.IntrinsicElements['button']

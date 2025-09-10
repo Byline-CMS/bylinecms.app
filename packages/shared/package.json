@@ -30,7 +30,7 @@
     "build": "rm -rf dist && tsc",
     "clean": "rm -rf node_modules dist .turbo",
     "test": "vitest",
-    "lint": "eslint --ext .ts,.js./src"
+    "lint": "biome check --write --unsafe --diagnostic-level=error"
   },
   "dependencies": {
     "argon2": "^0.44.0",

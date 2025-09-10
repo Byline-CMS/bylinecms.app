@@ -1,8 +1,11 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 /* 'border-collapse w-full text-sm text-left text-gray-700 dark:text-gray-400 m-0', */
 @layer infonomic-components {
-
   /* 'table--container break-normal overflow-hidden relative shadow-md rounded-md my-[16px] dark:border dark:border-canvas-700', */
   .table-container {
     display: block;
@@ -86,7 +89,7 @@
     }
 
     .table-row:hover:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
-      background-color: oklch(from var(--canvas-800) calc(l * 1.1) c h)
+      background-color: oklch(from var(--canvas-800) calc(l * 1.1) c h);
     }
 
     .table-heading-cell:not(:where([class~="not-dark"], [class~="not-dark"] *)) {

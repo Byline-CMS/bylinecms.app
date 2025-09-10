@@ -1,4 +1,8 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
   .alert {
@@ -43,7 +47,7 @@
   }
 
   .close svg {
-    fill: white
+    fill: white;
   }
 
   .fade {

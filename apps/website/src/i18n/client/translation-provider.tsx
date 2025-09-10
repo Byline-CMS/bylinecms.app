@@ -19,10 +19,11 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-// https://formatjs.io/docs/core-concepts/icu-syntax
-import { IntlMessageFormat } from 'intl-messageformat'
 import type React from 'react'
 import { createContext, useContext, useEffect, useState } from 'react'
+
+// https://formatjs.io/docs/core-concepts/icu-syntax
+import { IntlMessageFormat } from 'intl-messageformat'
 
 import type { Translations } from '@/i18n/server/index'
 import type { Locale } from '../i18n-config'

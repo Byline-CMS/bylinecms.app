@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -22,9 +23,8 @@
 
 import type * as React from 'react'
 
-import { Tabs as TabsPrimitive } from 'radix-ui'
-
 import cx from 'classnames'
+import { Tabs as TabsPrimitive } from 'radix-ui'
 
 import styles from './tabs.module.css'
 

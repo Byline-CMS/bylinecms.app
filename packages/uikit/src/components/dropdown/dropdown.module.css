@@ -1,7 +1,10 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
-
   .dropdown-content,
   .dropdown-subcontent {
     z-index: 20;
@@ -32,7 +35,6 @@
       animation-name: slideRightAndFade;
     }
   }
-
 
   .dropdown-item {
     display: flex;
@@ -68,7 +70,6 @@
   * a root html class accordingly
   */
   :global(.dark) {
-
     .dropdown-content:not(:where([class~="not-dark"], [class~="not-dark"] *)),
     .dropdown-subcontent:not(:where([class~="not-dark"], [class~="not-dark"] *)) {
       background-color: var(--canvas-800);
@@ -127,5 +128,4 @@
       transform: translateX(0);
     }
   }
-
 }

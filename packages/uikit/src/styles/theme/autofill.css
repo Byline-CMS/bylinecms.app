@@ -23,13 +23,13 @@ select:-webkit-autofill:focus, select:autofill:focus {
   select:autofill,
   select:autofill:hover,
   select:autofill:focus {
-    border: 1px solid #d89d3d !important;
-    -webkit-text-fill-color: black !important;
-    -webkit-box-shadow: 0 0 0px 1000px #fff2dc inset !important;
-    box-shadow: 0 0 0px 1000px #fff2dc inset !important;
-    transition: background-color 5000s ease-in-out 0s !important;
-    color: black !important;
-    background-color: rgb(250, 217, 167) !important;
+    border: 1px solid #d89d3d;
+    -webkit-text-fill-color: black;
+    -webkit-box-shadow: 0 0 0px 1000px #fff2dc inset;
+    box-shadow: 0 0 0px 1000px #fff2dc inset;
+    transition: background-color 5000s ease-in-out 0s;
+    color: black;
+    background-color: rgb(250, 217, 167);
   }
 
   /* 🌙 Dark via `.dark` class. We rely on the 
@@ -47,12 +47,12 @@ select:-webkit-autofill:focus, select:autofill:focus {
   .dark select:autofill,
   .dark select:autofill:hover,
   .dark select:autofill:focus {
-    border: 1px solid var(--theme-600) !important;
-    -webkit-text-fill-color: white !important;
-    -webkit-box-shadow: 0 0 0px 1000px var(--theme-600) inset !important;
-    box-shadow: 0 0 0px 1000px var(--theme-600) inset !important;
-    transition: background-color 5000s ease-in-out 0s !important;
-    color: white !important;
-    background-color: rgba(100, 100, 100, 0.5) !important;
+    border: 1px solid var(--theme-600);
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px var(--theme-600) inset;
+    box-shadow: 0 0 0px 1000px var(--theme-600) inset;
+    transition: background-color 5000s ease-in-out 0s;
+    color: white;
+    background-color: rgba(100, 100, 100, 0.5);
   }
 }

@@ -22,7 +22,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { capitalize } from '../../utils/capitalize.js'
-
 import { intent } from '../@types/shared.js'
 import { variant } from './@types/button.js'
 import { Button } from './button.js'

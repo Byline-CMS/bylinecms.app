@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -23,7 +24,6 @@
 import type React from 'react'
 
 import { Pagination } from './pagination'
-
 import type { PaginationProps } from './pagination'
 
 /**

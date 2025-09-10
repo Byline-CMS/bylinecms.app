@@ -4,22 +4,22 @@
 
 .editor-text li > ol,
 .editor-text li > ul {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .editor-text li > ul {
-  list-style: circle !important;
+  list-style: circle;
 }
 
 .editor-text li > ul > li > ul {
-  list-style: square !important;
+  list-style: square;
 }
 
 .editor-text li > ol {
-  list-style: lower-alpha !important;
+  list-style: lower-alpha;
 }
 
 .editor-text li > ol > li > ol {
-  list-style: lower-roman !important;
+  list-style: lower-roman;
 }

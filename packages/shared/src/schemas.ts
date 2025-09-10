@@ -34,9 +34,7 @@ export const integerFromStringSchema = z.coerce.number().int()
  * cases where we will append paths that begin with a slash onto this url)
  *
  */
-export const urlSchema = z
-  .url()
-  .refine((val) => !val.endsWith('/'))
+export const urlSchema = z.url().refine((val) => !val.endsWith('/'))
 
 /**
  * base64Schema
@@ -44,9 +42,7 @@ export const urlSchema = z
  * @description: Matches base64-encoded strings and decodes them into a node Buffer
  *
  */
-export const base64Schema = z
-  .base64()
-  .transform((val) => Buffer.from(val, 'base64'))
+export const base64Schema = z.base64().transform((val) => Buffer.from(val, 'base64'))
 
 /**
  * uuidSchema
@@ -130,7 +126,6 @@ export const requireIfEnabled =
     }
   }
 
-
 /**
  * passwordSchema
  *
@@ -153,12 +148,12 @@ export const passwordSchema = z
  */
 export const safeNumber = z.preprocess((val) => {
   if (val === null || val === undefined || Number.isNaN(val)) {
-    return 0;
+    return 0
   }
-  return val;
+  return val
 }, z.number())
 
 export const dateTimeSchema = z.preprocess(
-  (val) => (val === '' || val == null) ? null : val,
+  (val) => (val === '' || val == null ? null : val),
   z.coerce.date()
 )

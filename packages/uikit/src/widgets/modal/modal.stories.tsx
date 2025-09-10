@@ -25,7 +25,6 @@ import React from 'react'
 import { Button } from '../../components/button/button.js'
 import { IconButton } from '../../components/button/icon-button.js'
 import { CloseIcon } from '../../icons/close-icon.js'
-
 import { Modal, useModal } from './modal.js'
 
 export default {

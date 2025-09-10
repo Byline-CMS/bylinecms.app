@@ -19,7 +19,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { type ComponentProps, type ElementType, type ReactElement } from 'react'
+import type { ComponentProps, ElementType, ReactElement } from 'react'
 
 /**
  * @see https://www.benmvp.com/blog/polymorphic-react-components-typescript/

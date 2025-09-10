@@ -4,19 +4,19 @@
  * integrated with Tailwind (colors, breakpoints etc.) via
  * Tailwind theme configuration.
  */
-@import '@byline/uikit/styles.css';
+@import "@byline/uikit/styles.css";
 
 /**
-  * Optional uikit typography including prose and fonts
-  */
-@import '@byline/uikit/typography.css';
+ * Optional uikit typography including prose and fonts
+ */
+@import "@byline/uikit/typography.css";
 
 /**
-  * Tailwind - should come after the above.
-  */
-@import './tailwind.css';
+ * Tailwind - should come after the above.
+ */
+@import "./tailwind.css";
 
 /**
-  * Application styles
-  */
-@import './app.css';
+ * Application styles
+ */
+@import "./app.css";

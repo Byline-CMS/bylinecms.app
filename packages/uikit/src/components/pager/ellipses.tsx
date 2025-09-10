@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -25,7 +26,6 @@ import type React from 'react'
 import cx from 'classnames'
 
 import { usePager } from './pagination'
-
 import styles from './pagination.module.css'
 
 export function Ellipses(): React.JSX.Element {

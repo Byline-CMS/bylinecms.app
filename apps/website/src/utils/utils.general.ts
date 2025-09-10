@@ -251,10 +251,10 @@ export const getRemainingTime = (
   seconds: number
 } => {
   let result: {
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
+    days: number
+    hours: number
+    minutes: number
+    seconds: number
   }
   if (seconds != null && seconds > 0) {
     const d = Math.floor(seconds / (3600 * 24))

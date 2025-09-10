@@ -24,7 +24,6 @@ import type React from 'react'
 import cx from 'classnames'
 
 import { IconElement } from './icon-element.js'
-
 import type { IconProps } from './types/icon.js'
 
 export const GoogleIcon = ({ className, svgClassName, ...rest }: IconProps): React.JSX.Element => {

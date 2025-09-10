@@ -25,12 +25,12 @@
  * .storybook/preview.tsx
  */
 
-import { createContext, useContext, useMemo } from 'react'
 import type { ReactNode } from 'react'
+import { createContext, useContext, useMemo } from 'react'
 
 enum Theme {
   DARK = 'dark',
-  LIGHT = 'light'
+  LIGHT = 'light',
 }
 
 // ThemeContext

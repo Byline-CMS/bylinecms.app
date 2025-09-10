@@ -19,7 +19,6 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-
 import { base64Schema, urlSchema } from '@byline/shared/schemas'
 import { z } from 'zod'
 

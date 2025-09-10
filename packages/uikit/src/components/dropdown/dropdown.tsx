@@ -24,7 +24,6 @@
 import type React from 'react'
 
 import cx from 'classnames'
-
 import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui'
 
 import styles from './dropdown.module.css'

@@ -34,15 +34,13 @@ export default {
 
 export const Default = (): React.JSX.Element => {
   return (
-    <>
-      <div className="mb-6">
-        <div className="max-w-[800px] grid grid-cols-12">
-          <InfoIcon useSprite={true} />
-          <WarningIcon useSprite={true} />
-          <SuccessIcon useSprite={true} />
-          <DangerIcon useSprite={true} />
-        </div>
+    <div className="mb-6">
+      <div className="max-w-[800px] grid grid-cols-12">
+        <InfoIcon useSprite={true} />
+        <WarningIcon useSprite={true} />
+        <SuccessIcon useSprite={true} />
+        <DangerIcon useSprite={true} />
       </div>
-    </>
+    </div>
   )
 }

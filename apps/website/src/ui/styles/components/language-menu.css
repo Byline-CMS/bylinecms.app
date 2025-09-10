@@ -20,7 +20,7 @@
 .component--language-menu:active,
 .component--language-menu:focus {
   border: solid 1px var(--gray-800);
-  outline: none !important;
+  outline: none;
   border-style: solid;
   border-width: 1.5px;
   /* border-radius: 4px; */

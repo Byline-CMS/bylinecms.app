@@ -1,4 +1,8 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
   /* Positions are relative to the toast viewport which is set 
@@ -76,7 +80,6 @@
     fill: white;
   }
 
-
   .title {
     display: flex;
     padding: 0 12px 0 8px;
@@ -128,7 +131,6 @@
   }
 
   @media (min-width: 768px) {
-
     .root.top-right[data-state="open"],
     .root.bottom-right[data-state="open"] {
       animation: slideInFromRight 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -172,7 +174,6 @@
       width: 100%;
       max-width: 390px;
     }
-
   }
 
   @keyframes slideInFromRight {

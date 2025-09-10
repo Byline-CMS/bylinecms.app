@@ -3,7 +3,6 @@
  * projects as well as uikit development.
  */
 @layer infonomic-utilities {
-
   .sr-only {
     position: absolute;
     width: 1px;
@@ -836,7 +835,6 @@
     gap: var(--gap-12);
   }
 
-
   .gap-16 {
     gap: var(--gap-16);
   }
@@ -924,7 +922,6 @@
   }
 
   @media (min-width: 768px) {
-
     .md\:grid {
       display: grid;
     }
@@ -1187,7 +1184,6 @@
     .md\:shadow-xl {
       box-shadow: var(--shadow-xl);
     }
-
   }
 
   /* ========================================

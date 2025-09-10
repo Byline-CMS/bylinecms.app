@@ -21,15 +21,16 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import type * as React from 'react'
+
 import { CheckIcon } from '@radix-ui/react-icons'
 import cx from 'classnames'
 import { Checkbox as CheckboxPrimitive, Label as LabelPrimitive } from 'radix-ui'
-import type * as React from 'react'
 
-import type { Intent, Size, Variant } from './@types/checkbox.js'
 import styles from './checkbox.module.css'
 import { ErrorText } from './error-text.js'
 import { HelpText } from './help-text.js'
+import type { Intent, Size, Variant } from './@types/checkbox.js'
 
 export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   id: string

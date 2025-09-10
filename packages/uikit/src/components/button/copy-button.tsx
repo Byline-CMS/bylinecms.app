@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -28,10 +29,8 @@ import cx from 'classnames'
 import { CopyIcon } from '../../icons'
 import { Tooltip } from '../tooltip/tooltip.js'
 import { Button } from './button.js'
-
-import type { ButtonProps } from './button.js'
-
 import styles from './copy-button.module.css'
+import type { ButtonProps } from './button.js'
 
 interface CopyButtonProps extends Omit<ButtonProps, 'children'> {
   text: string

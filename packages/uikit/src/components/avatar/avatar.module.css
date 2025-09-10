@@ -1,7 +1,10 @@
-@layer infonomic-base, infonomic-utilities, infonomic-theme, infonomic-typography, infonomic-components;
+@layer infonomic-base,
+  infonomic-utilities,
+  infonomic-theme,
+  infonomic-typography,
+  infonomic-components;
 
 @layer infonomic-components {
-
   /* relative inline-flex h-10 w-10 rounded-full */
   .avatar-root {
     position: relative;
@@ -28,7 +31,6 @@
     border-radius: 50%;
     background-color: var(--color-white);
   }
-
 
   .avatar-text {
     font-size: var(--font-size-sm);

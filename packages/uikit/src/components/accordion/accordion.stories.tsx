@@ -19,9 +19,8 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import type { Meta, StoryObj } from '@storybook/react-vite'
-
 import { ChevronDownIcon } from '@radix-ui/react-icons'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Accordion as AccordionComponent } from './accordion.js'
 

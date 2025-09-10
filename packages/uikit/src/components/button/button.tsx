@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -20,15 +21,15 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Slot } from '@radix-ui/react-slot'
-import cx from 'classnames'
-// @ts-ignore
-import Ripple from 'material-ripple-effects'
 import type React from 'react'
 
-import type { Intent, Size, Variant } from './@types/button.js'
+import { Slot } from '@radix-ui/react-slot'
+import cx from 'classnames'
+// @ts-expect-error
+import Ripple from 'material-ripple-effects'
 
 import styles from './button.module.css'
+import type { Intent, Size, Variant } from './@types/button.js'
 
 export type ButtonRefType<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref']
 

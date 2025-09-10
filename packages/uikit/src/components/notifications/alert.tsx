@@ -1,4 +1,5 @@
 'use client'
+
 /**
  * Byline CMS
  *
@@ -25,17 +26,14 @@ import { useEffect, useState } from 'react'
 
 import cx from 'classnames'
 
-import { Button } from '../button/button.js'
-
 import { CloseIcon } from '../../icons/close-icon'
 import { DangerIcon } from '../../icons/danger-icon'
 import { InfoIcon } from '../../icons/info-icon'
 import { SuccessIcon } from '../../icons/success-icon'
 import { WarningIcon } from '../../icons/warning-icon'
-
-import type { Intent } from './@types/alert.js'
-
+import { Button } from '../button/button.js'
 import styles from './alert.module.css'
+import type { Intent } from './@types/alert.js'
 
 export interface AlertProps {
   intent?: Intent
@@ -92,30 +90,28 @@ export const Alert = function Alert({
       {...rest}
     >
       {title != null ? (
-        <>
-          <div className={styles['alert-with-title']}>
-            <div className={cx(styles.header)}>
-              {icon && <Icon useSprite={true} className={styles.icon} />}
-              <div className={cx(styles.title)}>
-                <span>{title}</span>
-              </div>
-              {close === true && (
-                <Button
-                  intent={intent}
-                  variant="filled"
-                  aria-label="Close"
-                  className={cx(styles.close)}
-                  type="button"
-                  onClick={handleOnClose}
-                  {...rest}
-                >
-                  <CloseIcon height="12px" width="12px" />
-                </Button>
-              )}
+        <div className={styles['alert-with-title']}>
+          <div className={cx(styles.header)}>
+            {icon && <Icon useSprite={true} className={styles.icon} />}
+            <div className={cx(styles.title)}>
+              <span>{title}</span>
             </div>
-            <div className={cx(styles.content)}>{children}</div>
+            {close === true && (
+              <Button
+                intent={intent}
+                variant="filled"
+                aria-label="Close"
+                className={cx(styles.close)}
+                type="button"
+                onClick={handleOnClose}
+                {...rest}
+              >
+                <CloseIcon height="12px" width="12px" />
+              </Button>
+            )}
           </div>
-        </>
+          <div className={cx(styles.content)}>{children}</div>
+        </div>
       ) : (
         <>
           {icon && <Icon useSprite={true} className={styles.icon} />}
