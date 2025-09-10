@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -7,10 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": [
-      "**",
-      "!**/tailwind.css"
-    ]
+    "includes": ["**", "!**/tailwind.css"]
   },
   "formatter": {
     "enabled": true,
@@ -22,18 +19,30 @@
     "lineWidth": 100,
     "attributePosition": "auto",
     "bracketSpacing": true,
-    "includes": [
-      "**",
-      "!**/dist",
-      "!**/build",
-      "!**/node_modules",
-      "!**/.cache"
-    ]
+    "includes": ["**", "!**/dist", "!**/build", "!**/node_modules", "!**/.cache"]
   },
   "assist": {
+    "enabled": true,
     "actions": {
       "source": {
-        "organizeImports": "on"
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":NODE:",
+              ":URL:",
+              ":BLANK_LINE:",
+              ["react"],
+              ["next/**", "@tanstack/**"],
+              ":BLANK_LINE:",
+              ":PACKAGE:",
+              ":BLANK_LINE:",
+              {
+                "type": false
+              }
+            ]
+          }
+        }
       }
     }
   },
@@ -41,36 +50,24 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "correctness": {
+        "noUnusedVariables": "warn",
+        "useUniqueElementIds": "off"
+      },
       "style": {
         "noNonNullAssertion": "info",
-        "useSelfClosingElements": "off",
-        "noParameterAssign": "error",
-        "useAsConstAssertion": "error",
-        "useDefaultParameterLast": "error",
-        "useEnumInitializers": "error",
-        "useSingleVarDeclarator": "error",
-        "noUnusedTemplateLiteral": "error",
-        "useNumberNamespace": "error",
-        "noInferrableTypes": "error",
-        "noUselessElse": "error"
+        "useSelfClosingElements": "off"
       },
       "suspicious": {
         "noExplicitAny": "off",
         "noConfusingVoidType": "off",
         "noArrayIndexKey": "warn"
       },
-      "correctness": {
-        "noUnusedVariables": "warn",
-        "noUnusedImports": "warn"
-      },
       "performance": {
         "noDelete": "off"
       },
       "a11y": {
         "useSemanticElements": "off"
-      },
-      "nursery": {
-        "useUniqueElementIds": "off"
       }
     }
   },
