@@ -131,5 +131,5 @@ Copyright © 2025 Anthony Bouch and contributors.
 
 ### Major Contributors
 
-* Anthony Bouch https://www.linkedin.com/in/anthonybouch/ 
-* David Lipsky https://www.linkedin.com/in/david-lipsky-4391862a8/
+* Anthony Bouch https://www.linkedin.com/in/anthonybouch/ anthony@infonomic.io 
+* David Lipsky https://www.linkedin.com/in/david-lipsky-4391862a8/ david@infonomic.io 
