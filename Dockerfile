@@ -17,7 +17,7 @@ FROM base AS deps
 
 WORKDIR /app
 
-COPY apps/website/package.json ./apps/website/package.json
+COPY apps/webapp/package.json ./apps/webapp/package.json
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
 
@@ -32,11 +32,11 @@ WORKDIR /app
 
 # NOTE: prune is not currently supported recursively.
 # https://pnpm.io/cli/prune - prune is not currently supported recursively.
-# COPY --from=deps /app/apps/website/node_modules /app/apps/website/node_modules
+# COPY --from=deps /app/apps/webapp/node_modules /app/apps/webapp/node_modules
 
 # RUN pnpm prune --prod
 
-COPY apps/website/package.json ./apps/website/package.json
+COPY apps/webapp/package.json ./apps/webapp/package.json
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
 
@@ -51,11 +51,11 @@ FROM base AS build
 WORKDIR /app
 
 
-COPY --from=deps /app/apps/website/node_modules /app/apps/website/node_modules
+COPY --from=deps /app/apps/webapp/node_modules /app/apps/webapp/node_modules
 COPY --from=deps /app/node_modules /app/node_modules
 
 # Copy source code for the project (manually excluding _docker)
-COPY apps/website apps/website
+COPY apps/webapp apps/webapp
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
 
 # RUN --mount=type=secret,id=payload_secret PAYLOAD_SECRET=$(cat /run/secrets/payload_secret) \
@@ -73,7 +73,7 @@ FROM base
 
 LABEL io.infonomic.name="byline_app" \
       io.infonomic.maintainer="Anthony Bouch <anthony@infonomic.io>" \
-      io.infonomic.description="Byline website app container."
+      io.infonomic.description="Byline webapp app container."
 
 ENV NODE_ENV=production
 ENV PATH="/root/.local/share/pnpm/global/5/node_modules/.bin:$PATH"
@@ -83,16 +83,16 @@ RUN corepack enable pnpm && pnpm add --global serve
 RUN set -eux; \
   mkdir -p /app; \
   mkdir -p /app/node_modules/.cache; \
-  mkdir -p /app/apps/website; \
+  mkdir -p /app/apps/webapp; \
 
 WORKDIR /app
 
 COPY --from=production-deps /app/node_modules /app/node_modules
 
 # main app
-COPY --from=production-deps /app/apps/website/node_modules /app/apps/website/node_modules
-COPY --from=build /app/apps/website/dist /app/apps/website/dist
-COPY --from=build /app/apps/website/public /app/apps/website/public
+COPY --from=production-deps /app/apps/webapp/node_modules /app/apps/webapp/node_modules
+COPY --from=build /app/apps/webapp/dist /app/apps/webapp/dist
+COPY --from=build /app/apps/webapp/public /app/apps/webapp/public
   
 # Root package.json and files
 COPY --from=build /app/package.json /app/package.json
@@ -102,4 +102,4 @@ COPY --from=build /app/turbo.json /app/turbo.json
 
 EXPOSE 3000
 
-CMD [ "serve", "-s", "apps/website/dist", "-l", "3000" ]
+CMD [ "serve", "-s", "apps/webapp/dist", "-l", "3000" ]
