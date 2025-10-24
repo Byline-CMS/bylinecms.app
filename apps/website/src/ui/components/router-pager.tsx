@@ -23,14 +23,14 @@
 
 import { Link, useRouterState } from '@tanstack/react-router'
 
-import type { PaginationProps } from '@byline/uikit/react'
+import type { PaginationProps } from '@infonomic/uikit/react'
 import {
   ChevronLeftDoubleIcon,
   ChevronLeftIcon,
   ChevronRightDoubleIcon,
   ChevronRightIcon,
   Pagination,
-} from '@byline/uikit/react'
+} from '@infonomic/uikit/react'
 
 // import { useSearchParams } from 'next/navigation'
 

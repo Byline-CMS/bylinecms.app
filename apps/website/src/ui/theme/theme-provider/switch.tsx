@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { LightIcon, MoonIcon } from '@byline/uikit/react'
+import { LightIcon, MoonIcon } from '@infonomic/uikit/react'
 import cx from 'classnames'
 
 import { useTheme } from '@/ui/theme/theme-provider/provider'

@@ -3,7 +3,7 @@
 import { forwardRef, useEffect, useState } from 'react'
 import { useRouterState } from '@tanstack/react-router'
 
-import { GithubIcon } from '@byline/uikit/react'
+import { GithubIcon } from '@infonomic/uikit/react'
 import cx from 'classnames'
 
 import { Branding } from '@/modules/home/branding'

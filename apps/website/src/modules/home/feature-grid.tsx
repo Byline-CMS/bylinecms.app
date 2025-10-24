@@ -1,4 +1,4 @@
-import { Card, Container, Section } from '@byline/uikit/react'
+import { Card, Container, Section } from '@infonomic/uikit/react'
 import { Database, Users, Zap } from 'lucide-react'
 
 export function FeatureGrid() {

@@ -1,4 +1,4 @@
-import { Container, Section } from '@byline/uikit/react'
+import { Container, Section } from '@infonomic/uikit/react'
 
 import { WYSIWYGAnimation } from '@/modules/home/wysiwyg-animation'
 
