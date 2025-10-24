@@ -18,8 +18,6 @@ FROM base AS deps
 WORKDIR /app
 
 COPY apps/website/package.json ./apps/website/package.json
-COPY packages/shared/package.json ./packages/shared/package.json
-COPY packages/uikit/package.json ./packages/uikit/package.json
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
 
@@ -35,14 +33,10 @@ WORKDIR /app
 # NOTE: prune is not currently supported recursively.
 # https://pnpm.io/cli/prune - prune is not currently supported recursively.
 # COPY --from=deps /app/apps/website/node_modules /app/apps/website/node_modules
-# COPY --from=deps /app/packages/shared/node_modules /app/packages/shared/node_modules
-# COPY --from=deps /app/packages/uikit/node_modules /app/packages/uikit/node_modules
 
 # RUN pnpm prune --prod
 
 COPY apps/website/package.json ./apps/website/package.json
-COPY packages/shared/package.json ./packages/shared/package.json
-COPY packages/uikit/package.json ./packages/uikit/package.json
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
 
@@ -58,13 +52,10 @@ WORKDIR /app
 
 
 COPY --from=deps /app/apps/website/node_modules /app/apps/website/node_modules
-COPY --from=deps /app/packages/shared/node_modules /app/packages/shared/node_modules
-COPY --from=deps /app/packages/uikit/node_modules /app/packages/uikit/node_modules
 COPY --from=deps /app/node_modules /app/node_modules
 
 # Copy source code for the project (manually excluding _docker)
 COPY apps/website apps/website
-COPY packages packages
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
 
 # RUN --mount=type=secret,id=payload_secret PAYLOAD_SECRET=$(cat /run/secrets/payload_secret) \
@@ -93,20 +84,10 @@ RUN set -eux; \
   mkdir -p /app; \
   mkdir -p /app/node_modules/.cache; \
   mkdir -p /app/apps/website; \
-  mkdir -p /app/packages/shared; \
-  mkdir -p /app/packages/uikit;
 
 WORKDIR /app
 
-COPY --from=production-deps /app/packages/shared/node_modules /app/packages/shared/node_modules
-COPY --from=production-deps /app/packages/uikit/node_modules /app/packages/uikit/node_modules
 COPY --from=production-deps /app/node_modules /app/node_modules
-
-# packages build (shared and uikit)
-COPY --from=build /app/packages/shared/dist /app/packages/shared/dist
-COPY --from=build /app/packages/shared/package.json /app/packages/shared/package.json
-COPY --from=build /app/packages/uikit/dist /app/packages/uikit/dist
-COPY --from=build /app/packages/uikit/package.json /app/packages/uikit/package.json
 
 # main app
 COPY --from=production-deps /app/apps/website/node_modules /app/apps/website/node_modules
