@@ -83,7 +83,7 @@ RUN corepack enable pnpm && pnpm add --global serve
 RUN set -eux; \
   mkdir -p /app; \
   mkdir -p /app/node_modules/.cache; \
-  mkdir -p /app/apps/webapp; \
+  mkdir -p /app/apps/webapp;
 
 WORKDIR /app
 
