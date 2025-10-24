@@ -39,27 +39,46 @@
 
   <script>
     (() => {
-      const classList = document.documentElement.classList;
-      const style = document.documentElement.style;
-      const theme = localStorage.theme
-      // This site defaults to dark mode, but respects user preference if set.
-      // const dark = window.matchMedia("(prefers-color-scheme: dark)");
-      if (localStorage.theme == null) {
-        localStorage.setItem("theme", "dark");
-        classList.add("dark");
-        style.colorScheme = "dark";
-      } else {
-        if (theme === "dark") {
-          classList.remove("light");
-          classList.add("dark");
-          style.colorScheme = "dark";
-        } else if (theme === "light") {
-          classList.remove("dark");
-          classList.add("light");
-          style.colorScheme = "light";
+        const classList = document.documentElement.classList
+        const style = document.documentElement.style
+        const system = window.matchMedia('(prefers-color-scheme: dark)')
+        const force = "dark";
+        let theme = localStorage.theme
+        if  (theme != null && theme !== 'dark' && theme !== 'light') {
+          localStorage.removeItem("theme"); // Clean up invalid value
+          theme = null;
         }
-      }
-    })();
+        
+        if (theme == null) {
+          if (force == null || force === 'undefined' || force.length === 0) {
+            if (system.matches) {
+              classList.remove("light");  
+              classList.add("dark");
+              style.colorScheme = "dark";
+            } else {
+              classList.remove("dark");
+              classList.add("light");
+              style.colorScheme = "light";
+            }
+          } else {
+            localStorage.setItem("theme", force);
+            classList.remove("light");
+            classList.remove("dark");
+            classList.add(force);
+            style.colorScheme = force;
+          }
+        } else {
+          if (theme === "dark") {
+            classList.remove("light");
+            classList.add("dark");
+            style.colorScheme = "dark";
+          } else if (theme === "light") {
+            classList.remove("dark");
+            classList.add("light");
+            style.colorScheme = "light";
+          }
+        }
+      })();
   </script>
 </head>
 

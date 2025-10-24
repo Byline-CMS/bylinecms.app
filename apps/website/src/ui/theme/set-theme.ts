@@ -1,5 +1,6 @@
-import type { Theme } from './theme-provider/utils'
+import type { Theme } from './utils'
 
-export async function setTheme(theme: Theme): Promise<void> {
+export function setTheme(theme: Theme): void {
+  if (typeof localStorage === 'undefined') return
   localStorage.setItem('theme', theme as string)
 }

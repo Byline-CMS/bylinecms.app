@@ -7,7 +7,7 @@ import { GithubIcon } from '@infonomic/uikit/react'
 import cx from 'classnames'
 
 import { Branding } from '@/modules/home/branding'
-import { ThemeSwitch } from '@/ui/theme/theme-provider/switch'
+import { ThemeSwitch } from '@/ui/theme/theme-switch'
 import type { Locale } from '@/i18n/i18n-config'
 
 interface AppBarProps {
