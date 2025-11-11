@@ -5,13 +5,40 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* 
+   Set the utility class in Tailwind to match our own, as for now
+   at least, we add the 'container' class attribute to our container
+   component - which conflicts with Tailwind's own container utility.
+*/
+@utility container {
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+  max-width: 960px;
+
+  /* Large */
+  @media (min-width: 1050px) {
+    max-width: 1024px;
+  }
+
+  /* X-Large */
+  @media (min-width: 1230px) {
+    max-width: 1190px;
+  }
+
+  /* 2X-Large */
+  @media (min-width: 1500px) {
+    max-width: 1400px;
+  }
+}
+
 @theme {
   --breakpoint-*: initial;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1320px;
-  --breakpoint-2xl: 1536px;
+  --breakpoint-lg: 1050px;
+  --breakpoint-xl: 1230px;
+  --breakpoint-2xl: 1500px;
 
   --font-*: initial;
   --font-sans:
@@ -97,6 +124,18 @@
   --color-canvas-800: var(--canvas-800);
   --color-canvas-900: var(--canvas-900);
   --color-canvas-950: var(--canvas-950);
+  --color-brand-25: var(--brand-25);
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
