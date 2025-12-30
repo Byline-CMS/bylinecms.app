@@ -4,7 +4,7 @@ export function GettingStarted() {
   return (
     <Section className="mb-8">
       <Container>
-        <div className="max-w-[1224px] space-y-8 py-20 container rounded-lg mx-auto px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-900 dark:to-purple-700">
+        <div className="max-w-[1224px] space-y-8 py-12 mb-8 container rounded-lg mx-auto px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-900 dark:to-purple-700">
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl font-bold text-white text-balance">
               We're Just Getting Started
@@ -25,9 +25,9 @@ export function GettingStarted() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
-              size="lg"
+              size="md"
               variant="outlined"
-              className="group not-dark text-lg px-5 py-4 text-white border-white hover:bg-white hover:text-purple-600 bg-transparent"
+              className="group not-dark text-lg px-5 py-2 text-white border-white hover:bg-white hover:text-purple-600 bg-transparent"
             >
               <a
                 href="https://github.com/Byline-CMS/bylinecms.dev"

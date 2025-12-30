@@ -10,7 +10,7 @@ export function HeroTagline() {
             CMS
           </span>
         </h1>
-        <p className="mb-12 max-w-2xl text-lg text-gray-900 dark:text-gray-200 sm:text-xl text-balance">
+        <p className="mb-12 max-w-2xl text-lg text-gray-900 dark:text-gray-200 sm:text-xl text-balance mx-auto">
           A modern, headless, fast, and AI-first content management system (CMS) for content-driven
           applications.
         </p>
